@@ -30,14 +30,14 @@
               style="width:250px;height:150px;" placeholder="CVE-2021-27104
 CVE-2021-27102"></textarea>
           
-          <div>
+          <div class="container">
               <button class="btn btn-primary" onclick="check_cve()">Check CVE</button>
               <button class="btn btn-primary" onclick="copyAsJsonToClipboard()">Copy as JSON</button>
           </div>
 
 
         <div id="bin-table-wrapper">
-            <table id="bin-table">
+            <table id="bin-table" class="table table-hover">
                 <thead>
                     <tr>
                         <th>CVE</th>
@@ -73,6 +73,9 @@ CVE-2021-27102"></textarea>
             }
 
             function check_cve() {
+                // empty the clipboard every time
+                _clipboard = [];
+                
                 cve_list = new Set(document.getElementById('cvelist').value.split('\n').map(el => el.trim()))
                 table = document.getElementById('bin-table')
 
