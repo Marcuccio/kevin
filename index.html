@@ -25,28 +25,34 @@
           CVE-2021-27104
           CVE-2021-27102 
         -->
-          <textarea id='cvelist' 
-              name="textarea" 
-              style="width:250px;height:150px;" placeholder="CVE-2021-27104
-CVE-2021-27102"></textarea>
-          
-          <div class="container">
-              <button class="btn btn-primary" onclick="check_cve()">Check CVE</button>
-              <button class="btn btn-primary" onclick="copyAsJsonToClipboard()">Copy as JSON</button>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <textarea id='cvelist' 
+                            name="textarea" 
+                            style="width:250px;height:150px;" placeholder="CVE-2021-27104
+              CVE-2021-27102"></textarea>
+                        
+                        
+                            <button class="btn btn-primary" onclick="check_cve()">Check CVE</button>
+                            <button class="btn btn-primary" onclick="copyAsJsonToClipboard()">Copy as JSON</button>
+                      </div>
+                </div>
 
+                <div class="col-12">
+                    <table id="bin-table" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>CVE</th>
+                                <th>Vulnerability name</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
 
-        <div id="bin-table-wrapper">
-            <table id="bin-table" class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>CVE</th>
-                        <th>Vulnerability name</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
+            </div>
         </div>
 
         <script type="text/javascript">
