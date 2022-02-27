@@ -63,17 +63,17 @@ CVE-2021-27102"></textarea>
                 });
 
             function copyAsJsonToClipboard() {
-                text = JSON.stringify(_clipboard, undefined, 2)
-                var dummy = document.createElement("textarea");
+                let json_object = JSON.stringify(_clipboard, undefined, 2)
+                let dummy = document.createElement("textarea");
                 document.body.appendChild(dummy);
-                dummy.value = text;
+                dummy.value = json_object;
                 dummy.select();
                 document.execCommand("copy");
                 document.body.removeChild(dummy);
             }
 
             function check_cve() {
-                cve_list = new Set(document.getElementById('cvelist').value.split('\n'))
+                cve_list = new Set(document.getElementById('cvelist').value.split('\n').map(el => el.trim()))
                 table = document.getElementById('bin-table')
 
                 while(table.rows.length > 1) {
