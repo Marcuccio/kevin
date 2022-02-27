@@ -51,16 +51,20 @@ CVE-2021-27102"></textarea>
 
         <script type="text/javascript">
             let _clipboard = [];
-            let data = undefined;
-
+            let catalog, catalog_version, catalog_date_released, catalog_count = undefined
+            
             fetch("known_exploited_vulnerabilities.json")
-              .then(response => response.json())
-              .then(json => console.log(json));
+              .then(response => catalog=response.json())
+              .then(json => {
+                  catalog=json
+                  catalog_version = catalog.catalog_version
+                  catalog_date_released = catalog.catalog_date_released
+                  catalog_count = catalog.count
+                });
 
             function copyAsJsonToClipboard() {
                 text = JSON.stringify(_clipboard, undefined, 2)
                 var dummy = document.createElement("textarea");
-                //dummy.style.display = 'none'
                 document.body.appendChild(dummy);
                 dummy.value = text;
                 dummy.select();
@@ -76,7 +80,7 @@ CVE-2021-27102"></textarea>
                   table.deleteRow(1);
                 }
 
-                data.vulnerabilities.map(entry => {
+                catalog.vulnerabilities.map(entry => {
                     if (cve_list.has(entry.cveID)) {
                         row = table.insertRow()
                         row.insertCell().innerHTML = entry.cveID
