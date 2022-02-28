@@ -85,9 +85,9 @@
                 // empty the clipboard every time
                 _clipboard = [];
                 
-                cve_list = new Set(document.getElementById('cvelist').value.split('\n').map(el => el.trim()))
+                let cve_list = new Set(document.getElementById('cvelist').value.split('\n').map(el => el.trim()))
 
-                table = document.getElementById('bin-table')
+                let table = document.getElementById('bin-table')
 
                 while(table.rows.length > 1) {
                   table.deleteRow(1);
@@ -95,7 +95,7 @@
 
                 catalog.vulnerabilities.map(entry => {
                     if (cve_list.has(entry.cveID)) {
-                        row = table.insertRow()
+                        let row = table.insertRow()
                         row.insertCell().innerHTML = entry.cveID
                         row.insertCell().innerHTML = entry.vulnerabilityName
                         _clipboard.push(entry)
