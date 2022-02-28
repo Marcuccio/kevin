@@ -32,8 +32,8 @@
                             style="width:250px;height:150px;" placeholder="CVE-2021-27104&#13;&#10;CVE-2021-27102&#13;&#10;..."></textarea>
                         
                         <div>
-                            <button id='checkcve' class="btn btn-primary">Check CVE</button>
-                            <button id='copyjson' class="btn btn-primary">Copy as JSON</button>
+                            <button id="checkcve" class="btn btn-primary">Check CVE</button>
+                            <button id="copyjson" class="btn btn-primary">Copy as JSON</button>
                         </div>                        
                         
                     </div>
@@ -60,11 +60,8 @@
 
             let _clipboard = [];
             let catalog, catalog_version, catalog_date_released, catalog_count = undefined
-
-            document.getElementById("checkcve").addEventListener("click", check_cve);
-            document.getElementById("copyjson").addEventListener("click", copyAsJsonToClipboard);
-            
-            fetch("known_exploited_vulnerabilities.json")
+           
+            fetch('known_exploited_vulnerabilities.json')
                 .then(response => catalog=response.json())
                 .then(json => {
                     catalog               = json
@@ -75,13 +72,14 @@
 
             function copyAsJsonToClipboard() {
                 let json_object = JSON.stringify(_clipboard, undefined, 2)
-                let dummy = document.createElement("textarea");
+                let dummy = document.createElement('textarea');
                 document.body.appendChild(dummy);
                 dummy.value = json_object;
                 dummy.select();
-                document.execCommand("copy");
+                document.execCommand('copy');
                 document.body.removeChild(dummy);
             }
+            document.getElementById('checkcve').addEventListener('click', check_cve);
 
             function check_cve() {
                 // empty the clipboard every time
@@ -103,7 +101,9 @@
                         _clipboard.push(entry)
                     }
                 })
-            }
+            }          
+            document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
+
         })()
         </script>
     </body>
