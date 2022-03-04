@@ -109,6 +109,7 @@
                 catalog.vulnerabilities.map(entry => {
                     if (cve_list.has(entry.cveID)) {
                         let row = table.insertRow()
+                        row.classList.add("align-middle");
                         row.insertCell().innerHTML = entry.cveID
                         row.insertCell().innerHTML = entry.vulnerabilityName
                         row.insertCell().innerHTML = entry.shortDescription
