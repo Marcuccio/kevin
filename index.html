@@ -10,7 +10,9 @@
     </head>
     <body>
         <div class="container">
-        <h1>CISA CVE</h1>
+        <h1>Verify Known Exploited Vulnerabilities Catalog</h1>
+
+        <p>As you may already know there exists a curated list of actively exploited vulnerabilities curated by the Cybersecurity & Infrastructure Security Agency (CISA)</p>
         <p>CISA will update this catalog with additional exploited vulnerabilities as they become known, subject to an executive level CISA review and when they satisfy the following thresholds:</p>
 
         <ul>
@@ -19,6 +21,9 @@
             <li>There is a clear remediation action for the vulnerability, such as a vendor provided update.</li>
         </ul>
 
+        <q>wish there was an easier way to read these. I need to know what they added and if the solution is fixed by a particular patch.</q> 
+
+        <p>You can use this tool to easily verify wether some of you CVE are marked as dangerous!</p>
 
           <!--     
           CVE-2021-27104
@@ -45,6 +50,7 @@
                             <tr>
                                 <th>CVE</th>
                                 <th>Vulnerability name</th>
+                                <th>Short Description</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -98,6 +104,7 @@
                         let row = table.insertRow()
                         row.insertCell().innerHTML = entry.cveID
                         row.insertCell().innerHTML = entry.vulnerabilityName
+                        row.insertCell().innerHTML = entry.shortDescription
                         _clipboard.push(entry)
                     }
                 })
