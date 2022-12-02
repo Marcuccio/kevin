@@ -11,8 +11,8 @@ jobs:
       # Check out the repository
       - uses: actions/checkout@v2
         with:
-          repository: projectdiscovery/nuclei-templates
-      # List the files in the "CVE" folder
+          ref: page
+      - run: git clone https://github.com/projectdiscovery/nuclei-templates.git && cd nuclei-templates/
       - run: ls -l ./cves/*/* > cve-files.txt
       - run: sed -i 's/.yaml//g' "cve-files.txt"
       # Add the new file to the repository
