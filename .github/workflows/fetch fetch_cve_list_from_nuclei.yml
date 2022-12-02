@@ -1,0 +1,21 @@
+name: Fetch known CVE from nuclei@projectdiscovery
+on:
+  schedule:
+    - cron: '0 0/12 * * *'
+    
+    
+jobs:
+  pull-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository
+      - uses: actions/checkout@v2
+        with:
+          repository: projectdiscovery/nuclei-templates
+      # List the files in the "CVE" folder
+      - run: ls -l ./cves/*/* > cve-files.txt
+      - run: sed -i 's/.yaml//g' "cve-files.txt"
+      # Add the new file to the repository
+      - run: git add cve-files.txt
+      # Commit the new file
+      - run: git commit -m "Upadate list of testable CVEs with nuclei"
