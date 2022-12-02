@@ -72,16 +72,23 @@
         'use strict'
 
             let _clipboard = [];
-            let catalog, catalog_version, catalog_date_released, catalog_count = undefined
+            
+
+            fetch('nuclei-cve.txt')
+                .then(response => response.text())
+                .then(text => {
+                    // Split the text on newline characters to create an array of lines
+                    const lines = text.split('\n')
+                })
            
             fetch('known_exploited_vulnerabilities.json')
-                .then(response => catalog=response.json())
+                .then(response => response.json())
                 .then(json => {
-                    catalog               = json
-                    catalog_version       = catalog.catalog_version
-                    catalog_date_released = catalog.catalog_date_released
-                    catalog_count         = catalog.count
-                });
+                    const catalog               = json
+                    const catalog_version       = catalog.catalog_version
+                    const catalog_date_released = catalog.catalog_date_released
+                    const catalog_count         = catalog.count
+                })
 
             function copyAsJsonToClipboard() {
                 let json_object = JSON.stringify(_clipboard, undefined, 2)
@@ -106,6 +113,15 @@
                   table.deleteRow(1);
                 }
 
+                // Filter the objects in catalog.vulnerabilities to only include those that contain an element from the elements list
+                const filteredObjects = catalog.vulnerabilities.filter(object => elements.some(element => object.cveID.includes(element)))
+
+                // Add the element to each filtered object using Object.assign()
+                // Add the element to each filtered object using Object.assign()
+                const updatedObjects = filteredObjects.map(object => Object.assign(object, { element: elements.find(element => object.cveID.includes(element)) }))
+
+                console.log(updatedObjects)
+
                 catalog.vulnerabilities.map(entry => {
                     if (cve_list.has(entry.cveID)) {
                         let row = table.insertRow()
@@ -116,7 +132,7 @@
                         _clipboard.push(entry)
                     }
                 })
-            }          
+            }
             document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
 
         })()
