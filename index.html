@@ -74,12 +74,12 @@
             let _clipboard = [];
             
             let elements
-            
+
             fetch('nuclei-cve.txt')
-                .then(response => response.text())
+                .then(response => response.json())
                 .then(text => {
                     // Split the text on newline characters to create an array of lines
-                    elements = text.split('\n')
+                    elements = text
                 })
 
             let catalog, catalog_version, catalog_date_released, catalog_count;
