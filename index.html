@@ -58,6 +58,7 @@
                                 <th>CVE</th>
                                 <th>Vulnerability name</th>
                                 <th>Short Description</th>
+                                <th>POC</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -91,7 +92,17 @@
                     catalog_version       = catalog.catalog_version
                     catalog_date_released = catalog.catalog_date_released
                     catalog_count         = catalog.count
+
+                    console.log(`The catalog version is ${catalog_version}`);
                 })
+
+            catalog.vulnerabilities.map(obj => {
+                if (elements.some(element => obj.cveID==element))
+                    obj.poc="nuclei";
+                else 
+                    obj.poc="none";
+                return obj
+            });
 
             function copyAsJsonToClipboard() {
                 let json_object = JSON.stringify(_clipboard, undefined, 2)
@@ -102,7 +113,6 @@
                 document.execCommand('copy');
                 document.body.removeChild(dummy);
             }
-            document.getElementById('checkcve').addEventListener('click', check_cve);
 
             function check_cve() {
                 // empty the clipboard every time
@@ -116,28 +126,23 @@
                   table.deleteRow(1);
                 }
 
-                // Filter the objects in catalog.vulnerabilities to only include those that contain an element from the elements list
-                const filteredObjects = catalog.vulnerabilities.filter(object => elements.some(element => object.cveID.includes(element)))
-
-                // Add the element to each filtered object using Object.assign()
-                // Add the element to each filtered object using Object.assign()
-                const updatedObjects = filteredObjects.map(object => Object.assign(object, { element: elements.find(element => object.cveID.includes(element)) }))
-
-                console.log(updatedObjects)
-
-                catalog.vulnerabilities.map(entry => {
-                    if (cve_list.has(entry.cveID)) {
+                catalog.vulnerabilities
+                    .filter(kev => cve_list.has(kev.cveID))
+                    .map(kev => {
                         let row = table.insertRow()
                         row.classList.add("align-middle");
-                        row.insertCell().innerHTML = entry.cveID
-                        row.insertCell().innerHTML = entry.vulnerabilityName
-                        row.insertCell().innerHTML = entry.shortDescription
-                        _clipboard.push(entry)
-                    }
-                })
+                        row.insertCell().innerHTML = kev.cveID
+                        row.insertCell().innerHTML = kev.vulnerabilityName
+                        row.insertCell().innerHTML = kev.shortDescription
+                        row.insertCell().innerHTML = kev.poc
+                        _clipboard.push(kev)
+                    })
             }
-            document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
 
+
+            document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
+            document.getElementById('checkcve').addEventListener('click', check_cve);
+            
         })()
         </script>
     </body>
