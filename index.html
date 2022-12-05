@@ -93,7 +93,7 @@
                     console.log(`The catalog version is ${catalog_version}`);
                 })
 
-            Promise.all([nuclei, kev]).then(
+            Promise.allSettled([nuclei, kev]).then(
                 catalog.vulnerabilities.map(obj => {
                     if (elements.some(element => obj.cveID==element))
                         obj.poc="nuclei";
