@@ -94,7 +94,7 @@
                 })
 
             Promise.allSettled([nuclei, kev]).then(
-                catalog.vulnerabilities.map(obj => {
+                catalog["vulnerabilities"].map(obj => {
                     if (elements.some(element => obj.cveID==element))
                         obj.poc="nuclei";
                     else 
