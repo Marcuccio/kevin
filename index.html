@@ -76,16 +76,13 @@
             
             let elements
 
-            fetch('nuclei-cve.json')
+            const nuclei = fetch('nuclei-cve.json')
                 .then(response => response.json())
-                .then(text => {
-                    // Split the text on newline characters to create an array of lines
-                    elements = text
-                })
+                .then(text => elements = text)
 
             let catalog, catalog_version, catalog_date_released, catalog_count;
            
-            fetch('known_exploited_vulnerabilities.json')
+            const kev = fetch('known_exploited_vulnerabilities.json')
                 .then(response => response.json())
                 .then(json => {
                     catalog               = json
@@ -96,13 +93,15 @@
                     console.log(`The catalog version is ${catalog_version}`);
                 })
 
-            catalog.vulnerabilities.map(obj => {
-                if (elements.some(element => obj.cveID==element))
-                    obj.poc="nuclei";
-                else 
-                    obj.poc="none";
-                return obj
-            });
+            Promise.all([nuclei, kev]).then(
+                catalog.vulnerabilities.map(obj => {
+                    if (elements.some(element => obj.cveID==element))
+                        obj.poc="nuclei";
+                    else 
+                        obj.poc="none";
+                    return obj
+                })
+            )
 
             function copyAsJsonToClipboard() {
                 let json_object = JSON.stringify(_clipboard, undefined, 2)
