@@ -74,26 +74,24 @@
 
             let _clipboard = [];
             
-            let elements
+            let nuclei_cve = undefined
+            let catalog, catalog_version, catalog_date_released, catalog_count = undefined;
 
-            const nuclei = fetch('nuclei-cve.json')
-                .then(response => response.json())
-                .then(text => elements = text)
+        
+            Promise.all([
+                fetch('nuclei-cve.json').then(resp => resp.json()),
+                fetch('known_exploited_vulnerabilities.json').then(resp => resp.json()),
+            ]).then(([resp_nuclei, resp_kev]) => {
 
-            let catalog, catalog_version, catalog_date_released, catalog_count;
-           
-            const kev = fetch('known_exploited_vulnerabilities.json')
-                .then(response => response.json())
-                .then(json => {
-                    catalog               = json
-                    catalog_version       = catalog.catalog_version
-                    catalog_date_released = catalog.catalog_date_released
-                    catalog_count         = catalog.count
+                    nuclei_cve = resp_nuclei
+
+                    catalog               = resp_kev
+                    catalog_version       = resp_kev.catalog_version
+                    catalog_date_released = resp_kev.catalog_date_released
+                    catalog_count         = resp_kev.count
 
                     console.log(`The catalog version is ${catalog_version}`);
-                })
-
-            Promise.allSettled([nuclei, kev]).then(
+            }).then(
                 catalog["vulnerabilities"].map(obj => {
                     if (elements.some(element => obj.cveID==element))
                         obj.poc="nuclei";
