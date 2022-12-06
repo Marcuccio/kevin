@@ -92,9 +92,9 @@
                 catalog_count         = resp_kev.count
 
                 console.log(`The catalog version is ${catalog_version}`);
-                
-                catalog["vulnerabilities"].map(obj => {
-                    if (elements.some(element => obj.cveID==element))
+
+                catalog["vulnerabilities"].map(vuln => {
+                    if (nuclei_cve.some(template => vuln.cveID==template))
                         obj.poc="nuclei";
                     else 
                         obj.poc="none";
