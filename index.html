@@ -95,10 +95,10 @@
 
                 catalog["vulnerabilities"].map(vuln => {
                     if (nuclei_cve.some(template => vuln.cveID==template))
-                        obj.poc="nuclei";
+                        vuln.poc="nuclei";
                     else 
-                        obj.poc="none";
-                    return obj
+                        vuln.poc="none";
+                    return vuln
                 })
             })
         
