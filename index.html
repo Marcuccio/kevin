@@ -81,17 +81,18 @@
             Promise.all([
                 fetch('nuclei-cve.json').then(resp => resp.json()),
                 fetch('known_exploited_vulnerabilities.json').then(resp => resp.json()),
-            ]).then(([resp_nuclei, resp_kev]) => {
+                fetch('inthewild.json').then(resp => resp.json())
+            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => {
 
-                    nuclei_cve = resp_nuclei
+                nuclei_cve = resp_nuclei
 
-                    catalog               = resp_kev
-                    catalog_version       = resp_kev.catalog_version
-                    catalog_date_released = resp_kev.catalog_date_released
-                    catalog_count         = resp_kev.count
+                catalog               = resp_kev
+                catalog_version       = resp_kev.catalog_version
+                catalog_date_released = resp_kev.catalog_date_released
+                catalog_count         = resp_kev.count
 
-                    console.log(`The catalog version is ${catalog_version}`);
-            }).then(
+                console.log(`The catalog version is ${catalog_version}`);
+                
                 catalog["vulnerabilities"].map(obj => {
                     if (elements.some(element => obj.cveID==element))
                         obj.poc="nuclei";
@@ -99,7 +100,8 @@
                         obj.poc="none";
                     return obj
                 })
-            )
+            })
+        
 
             function copyAsJsonToClipboard() {
                 let json_object = JSON.stringify(_clipboard, undefined, 2)
