@@ -1,7 +1,7 @@
 name: Fetch known CVE from nuclei@projectdiscovery
 on:
   schedule:
-    - cron: '0 0/12 * * *'
+    - cron: '0/5 * * * *'
     
     
 jobs:
@@ -9,13 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Check out the repository
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           ref: page
-      - run: git clone https://github.com/projectdiscovery/nuclei-templates.git && cd nuclei-templates/
-      - run: ls -l ./cves/*/* > cve-files.txt
-      - run: sed -i 's/.yaml//g' "cve-files.txt"
-      # Add the new file to the repository
-      - run: git add cve-files.txt
-      # Commit the new file
-      - run: git commit -m "Upadate list of testable CVEs with nuclei"
+      - run: |
+          git clone https://github.com/projectdiscovery/nuclei-templates.git
+          cd nuclei-templates/
+          ls -l ./cves/*/*.yaml > cve-files.txt
+          sed -i 's/.yaml//g' "cve-files.txt"
+          git add cve-files.txt
+          git commit -m "Upadate list of testable CVEs with nuclei"
