@@ -15,8 +15,7 @@ jobs:
           ref: page
       - run: |
           git clone https://github.com/projectdiscovery/nuclei-templates.git
-          cd nuclei-templates/
-          ls -l ./cves/*/*.yaml > cve-files.txt
+          find "./nuclei-templates" -type f -name "*.yaml" > cve-files.txt
           sed -i 's/.yaml//g' "cve-files.txt"
           git add cve-files.txt
           git commit -m "Upadate list of testable CVEs with nuclei"
