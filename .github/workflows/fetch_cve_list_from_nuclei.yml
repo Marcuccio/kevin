@@ -1,7 +1,7 @@
 name: Fetch known CVE from nuclei@projectdiscovery
 on:
   schedule:
-    - cron: '0 0 0 ? * * *'
+    - cron: '0 0/2 0 ? * * *'
     
     
 jobs:
@@ -14,8 +14,10 @@ jobs:
         with:
           ref: page
       - run: |
-          git clone https://github.com/projectdiscovery/nuclei-templates.git
-          find "./nuclei-templates" -type f -name "*.yaml" > cve-files.txt
+          # git clone https://github.com/projectdiscovery/nuclei-templates.git
+          wget https://github.com/projectdiscovery/nuclei-templates/archive/master.zip
+          unzip master.zip
+          find "./nuclei-templates-master/nuclei-templates" -type f -name "*.yaml" > cve-files.txt
           sed -i 's/.yaml//g' "cve-files.txt"
           git add cve-files.txt
           git commit -m "Upadate list of testable CVEs with nuclei"
