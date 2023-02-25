@@ -14,7 +14,6 @@ jobs:
         with:
           ref: page
       - run: |
-          # git clone https://github.com/projectdiscovery/nuclei-templates.git
           wget https://github.com/projectdiscovery/nuclei-templates/archive/master.zip
           unzip master.zip
           find "./nuclei-templates-master/cves/" -type f -name "*.yaml" > cve-files.txt
