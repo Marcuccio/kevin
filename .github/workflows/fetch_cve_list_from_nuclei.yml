@@ -5,18 +5,20 @@ on:
     
     
 jobs:
-  pull-and-commit:
+  report:
     runs-on: ubuntu-latest
     steps:
-      # Check out the repository
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           ref: page
-      - run: |
+      - name: fetch nuclei_cves
+        run: |
           wget https://github.com/projectdiscovery/nuclei-templates/archive/master.zip
           unzip master.zip
           find "./nuclei-templates-master/cves/" -type f -name "*.yaml" -exec basename {} \; > cve-files.txt
           sed -i 's/.yaml//g' "cve-files.txt"
-          git add cve-files.txt
-          git commit -m "Upadate list of testable CVEs with nuclei"
+      - name: commit & push
+        run: |
+          git config --global user.name 'Marcuccio'
+          git config --global user.email 'marcuccio.dev@gmail.com'
+          git commit -am "Automated fetch of nuclei_cves" && git push
