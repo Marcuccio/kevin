@@ -1,11 +1,13 @@
 #![allow(dead_code)]
 
-
 use std::collections::HashMap;
 use std::fs::File;
 use std::path::Path;
 use std::fmt;
 use serde::{Deserialize};
+
+const URL_KEVIN: &str = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json";
+const URL_INTHEWILD: &str = "https://inthewild.io/api/exploited";
 
 mod util;
 
@@ -47,19 +49,19 @@ struct Inthewild {
 
 #[allow(unused_variables)]
 #[derive(Debug, Deserialize)]
-struct Kev {
+struct KevWrapper {
     title: String,
     #[serde(rename = "catalogVersion")]
     catalog_version: String,
     #[serde(rename = "dateReleased")]
     date_released: String,
     count: u16,
-    vulnerabilities: Vec<Vulnerabilities>
+    vulnerabilities: Vec<Kev>
 }
 
 #[allow(unused_variables)]
 #[derive(Debug, Deserialize)]
-struct Vulnerabilities {
+struct Kev {
     #[serde(rename = "cveID")]
     id: String,
     #[serde(rename = "vendorProject")]
@@ -86,22 +88,6 @@ fn filter_cve(input: &[String], known: &[String]) -> Vec<String> {
         .collect::<Vec<String>>()
 }
 
-fn read_kev_from_json(path: &str) -> Result<Kev, serde_json::Error> {
-    let json_file_path = Path::new(path);
-    let file = File::open(json_file_path).expect("json file not found");
-    let kev: Kev = serde_json::from_reader(file)?;
-
-    Ok(kev)
-}       
-
-fn read_inthewild_from_json(path: &str) -> Result<Vec<Inthewild>, serde_json::Error> {
-    let json_file_path = Path::new(path);
-    let file = File::open(json_file_path).expect("json file not found");
-    let itw: Vec<Inthewild> = serde_json::from_reader(file)?;
-
-    Ok(itw)
-}
-
 fn cves_from_itw(itw: &[Inthewild]) -> Vec<String> {
     let cves = itw
     .iter()
@@ -111,7 +97,7 @@ fn cves_from_itw(itw: &[Inthewild]) -> Vec<String> {
     cves
 }
 
-fn cves_from_kev(vuln: &[Vulnerabilities]) -> Vec<String> {
+fn cves_from_kev(vuln: &[Kev]) -> Vec<String> {
     let cves = vuln
     .iter()
     .map(|x| x.id.clone())
@@ -120,7 +106,7 @@ fn cves_from_kev(vuln: &[Vulnerabilities]) -> Vec<String> {
     cves
 }
 
-fn add_cve_knownledge(report: &mut HashMap<String, Source>, itw: &[Inthewild], kev: &Kev, nuc_cve: &[String]) {
+fn add_cve_knownledge(report: &mut HashMap<String, Source>, itw: &[Inthewild], kev: &KevWrapper, nuc_cve: &[String]) {
     let itw_cve = cves_from_itw(itw);
     let kev_cve = cves_from_kev(&kev.vulnerabilities);
 
@@ -144,8 +130,14 @@ pub fn run(input: &[String]) -> Result<HashMap<String, Source>, String>{
     .map(|x| (x.to_owned(), Source::new()))
     .collect();
 
-    let itw = read_inthewild_from_json("C:\\Users\\mstrambelli\\Tools\\kevin\\src\\inthewild.json").unwrap();
-    let kev = read_kev_from_json("C:\\Users\\mstrambelli\\Tools\\kevin\\src\\known_exploited_vulnerabilities.json").unwrap();
+    let itw: Vec<Inthewild> = serde_json::from_reader(
+        util::dwnld_from_url(URL_INTHEWILD).unwrap()
+    ).unwrap();
+    
+    let kev: KevWrapper = serde_json::from_reader(
+        util::dwnld_from_url(URL_KEVIN).unwrap()
+    ).unwrap();
+
     let nuc = util::read_file_to_vec("C:\\Users\\mstrambelli\\Tools\\kevin\\src\\nuclei_cves").unwrap();
 
     add_cve_knownledge(&mut report, &itw, &kev, &nuc);

@@ -1,6 +1,8 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
+
+use std::path::Path;
 use std::io::{self,BufRead, BufReader};
 use std::fs::File;
 use colored::Colorize;
@@ -16,9 +18,15 @@ pub fn read_file_to_vec(filename: &str) -> std::io::Result<Vec<String>> {
     Ok(lines)
 }
 
-pub fn dwnld_from_url(url: &str) {
-	todo!()
+pub fn dwnld_from_url(url: &str) -> Result<reqwest::blocking::Response, Box<dyn std::error::Error>> {
+    let resp = reqwest::blocking::get(url)?;
+    Ok(resp)
 }
+
+pub fn read_file(path: &str) -> Result<File, std::io::Error> {
+    let file_path = Path::new(path);
+    File::open(file_path)
+}       
 
 pub fn get_stdio_lines() -> Vec<String> {
     let stdin = io::stdin();
