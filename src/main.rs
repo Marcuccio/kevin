@@ -43,6 +43,6 @@ fn main() {
     util::warn("Developers assume no liability and are not responsible for any misuse or damage.".to_string());
     
     let lines = util::get_stdio_lines();
-
+    
     let _ = kevin::run(&lines).unwrap();
 }
