@@ -15,7 +15,7 @@ jobs:
         run: |
           wget https://github.com/projectdiscovery/nuclei-templates/archive/master.zip
           unzip master.zip
-          find "./nuclei-templates-master/cves/" -type f -name "*.yaml" -exec basename {} \; > cve-files.txt
+          find "./nuclei-templates-master/network/cves/" -type f -name "*.yaml" -exec basename {} \; > cve-files.txt
           sed -i 's/.yaml//g' "cve-files.txt"
       - name: commit & push
         run: |
