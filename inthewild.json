@@ -1,12 +1,12 @@
---2023-07-02 12:36:57--  https://inthewild.io/api/exploited
+--2023-07-03 01:57:12--  https://inthewild.io/api/exploited
 Resolving inthewild.io (inthewild.io)... 104.26.5.39, 172.67.72.174, 104.26.4.39, ...
 Connecting to inthewild.io (inthewild.io)|104.26.5.39|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [application/json]
 Saving to: ‘exploited’
 
-     0K .......... .......... .......... .......... .......... 52.8M
-    50K .......... .......... .......... ........              36.6M=0.002s
+     0K .......... .......... .......... .......... .......... 9.19M
+    50K .......... .......... .......... ........              30.8M=0.007s
 
-2023-07-02 12:36:58 (44.2 MB/s) - ‘exploited’ saved [90929]
+2023-07-03 01:57:12 (13.2 MB/s) - ‘exploited’ saved [90929]
 
