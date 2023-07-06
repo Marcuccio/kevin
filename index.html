@@ -76,20 +76,22 @@
             
             let nuclei_cve = undefined
             let catalog, catalog_version, catalog_date_released, catalog_count = undefined;
+            let inthewild = undefined
 
-        
             Promise.all([
-                fetch('nuclei.jsonl').then(resp => resp.text()),
-                fetch('known_exploited_vulnerabilities.json').then(resp => resp.json()),
+                fetch('nuclei.txt').then(resp => resp.text()),
+                fetch('kev.json').then(resp => resp.json()),
                 fetch('inthewild.json').then(resp => resp.json())
             ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => {
 
-                nuclei_cve = resp_nuclei
+                nuclei_cve = resp_nuclei.split("\n")
+                inthewild = resp_inthewild
 
                 catalog               = resp_kev
                 catalog_version       = resp_kev.catalog_version
                 catalog_date_released = resp_kev.catalog_date_released
                 catalog_count         = resp_kev.count
+
 
                 console.log(`The catalog version is ${catalog_version}`);
 
