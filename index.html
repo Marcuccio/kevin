@@ -79,7 +79,7 @@
 
         
             Promise.all([
-                fetch('nuclei-cve.json').then(resp => resp.json()),
+                fetch('nuclei.jsonl').then(resp => resp.text()),
                 fetch('known_exploited_vulnerabilities.json').then(resp => resp.json()),
                 fetch('inthewild.json').then(resp => resp.json())
             ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => {
