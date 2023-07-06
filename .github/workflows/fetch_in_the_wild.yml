@@ -10,7 +10,7 @@ jobs:
         with:
           ref: page
       - name: Fetch in_the_wild file
-        run: wget https://inthewild.io/api/exploited -o inthewild.json
+        run: wget https://inthewild.io/api/exploited -O inthewild.json
       - name: Commit in_the_wild
         run: |
           git config --global user.name 'Marcuccio'
