@@ -1,4 +1,4 @@
-name: Fetch known CVE from nuclei@projectdiscovery
+name: Fetch CVE from nuclei@projectdiscovery
 on:
   schedule:
     - cron: '0 0/12 * * *'
@@ -17,10 +17,9 @@ jobs:
           unzip master.zip nuclei-templates-master/cves/*
           find "./nuclei-templates-master/cves/" -type f -name "*.yaml" -exec basename {} \; > nuclei.txt
           sed -i 's/.yaml//g' "nuclei.txt"
-          awk '{ print "\""$0"\""}' nuclei.txt > nuclei.jsonl
 
       - name: commit & push
         run: |
           git config --global user.name 'Marcuccio'
           git config --global user.email 'marcuccio.dev@gmail.com'
-          git add nuclei.jsonl && git commit -m "fetch of nuclei_cves" && git push
+          git add nuclei.txt && git commit -m "fetch of nuclei_cves" && git push

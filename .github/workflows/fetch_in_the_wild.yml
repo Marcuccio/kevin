@@ -1,4 +1,4 @@
-name: Fetch known exploited vulnerabilities
+name: Fetch inthewild api
 on:
   schedule:
     - cron: '0 0/12 * * *'
@@ -15,4 +15,4 @@ jobs:
         run: |
           git config --global user.name 'Marcuccio'
           git config --global user.email 'marcuccio.dev@gmail.com'
-          git commit -am "Automated fetch of in_the_wild" && git push
+          git add inthewild.json && git commit -m "Automated fetch of in_the_wild" && git push
