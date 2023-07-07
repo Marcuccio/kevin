@@ -58,7 +58,9 @@
                                 <th>CVE</th>
                                 <th>Vulnerability name</th>
                                 <th>Short Description</th>
-                                <th>POC</th>
+                                <th>kev</th>
+                                <th>itw</th>
+                                <th>nuclei</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -72,38 +74,40 @@
         (function () {
         'use strict'
 
+            let cvelist = document.getElementById('cvelist')
+            let table   = document.getElementById('bin-table')
             let _clipboard = [];
             
-            let nuclei_cve = undefined
-            let catalog, catalog_version, catalog_date_released, catalog_count = undefined;
-            let inthewild = undefined
+            let nuc = undefined
+            let itw = undefined
+            let kev, catalog_version, catalog_date_released, catalog_count = undefined;
 
             Promise.all([
                 fetch('nuclei.txt').then(resp => resp.text()),
                 fetch('kev.json').then(resp => resp.json()),
-                fetch('inthewild.json').then(resp => resp.json())
-            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => {
+                fetch('itw.json').then(resp => resp.json())
+            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => 
+            {
 
-                nuclei_cve = resp_nuclei.split("\n")
-                inthewild = resp_inthewild
+                nuc = resp_nuclei.split("\n")
+                itw = resp_inthewild
+                kev = resp_kev
 
-                catalog               = resp_kev
-                catalog_version       = resp_kev.catalog_version
-                catalog_date_released = resp_kev.catalog_date_released
-                catalog_count         = resp_kev.count
+                kev_version       = resp_kev.catalog_version
+                kev_date_released = resp_kev.catalog_date_released
+                kev_count         = resp_kev.count
 
 
-                console.log(`The catalog version is ${catalog_version}`);
+                console.log(`[KEV] catalog version is ${catalog_version}`);
 
-                catalog["vulnerabilities"].map(vuln => {
-                    if (nuclei_cve.some(template => vuln.cveID==template))
+                kev["vulnerabilities"].map(vuln => {
+                    if (nuc.some(template => vuln.cveID==template))
                         vuln.poc="nuclei";
                     else 
                         vuln.poc="none";
                     return vuln
                 })
             })
-        
 
             function copyAsJsonToClipboard() {
                 let json_object = JSON.stringify(_clipboard, undefined, 2)
@@ -115,35 +119,71 @@
                 document.body.removeChild(dummy);
             }
 
-            function check_cve() {
-                // empty the clipboard every time
-                _clipboard = [];
-                
-                let cve_list = new Set(document.getElementById('cvelist').value.split('\n').map(el => el.trim()))
+            function cves_from_itw(itw) {
+              let cves = itw.map(x => x.id);
+              return cves;
+            }
 
-                let table = document.getElementById('bin-table')
+            function cves_from_kev(vuln) {
+              let cves = vuln.map(x => x.id);
+              return cves;
+            }
+
+            function add_cve_knownledge(report, itw, kev, nuc_cve) {
+                let itw_cve = cves_from_itw(itw);
+                let kev_cve = cves_from_kev(kev.vulnerabilities);
+
+                for (let [key, value] of Object.entries(report)) {
+                    if (itw_cve.includes(key)) {
+                        value.is_inthewild = true;
+                    }
+                    if (kev_cve.includes(key)) {
+                        value.is_kev = true;
+                    }
+                    if (nuc_cve.includes(key)) {
+                        value.is_nuclei = true;
+                    }
+                }
+            }
+
+            function run(input) {
+
+                console.log(kev)
+                console.log(nuc)
+                console.log(itw)
+
+                let report = {}; 
+
+                cvelist.value.split('\n').map(el => el.trim()).forEach(key => {
+                    report[key] = {
+                        "is_kev": false,
+                        "is_itw": false,
+                        "is_nuc": false,
+                    };
+                });
+
+                add_cve_knownledge(report, kev, itw, nuc);
 
                 while(table.rows.length > 1) {
                   table.deleteRow(1);
                 }
 
-                catalog.vulnerabilities
-                    .filter(kev => cve_list.has(kev.cveID))
-                    .map(kev => {
+                report.map(v => {
                         let row = table.insertRow()
                         row.classList.add("align-middle");
-                        row.insertCell().innerHTML = kev.cveID
-                        row.insertCell().innerHTML = kev.vulnerabilityName
-                        row.insertCell().innerHTML = kev.shortDescription
-                        row.insertCell().innerHTML = kev.poc
-                        _clipboard.push(kev)
-                    })
-            }
+                        row.insertCell().innerHTML = v.cveID
+                        row.insertCell().innerHTML = v.vulnerabilityName
+                        row.insertCell().innerHTML = v.shortDescription
+                        row.insertCell().innerHTML = v.is_kev
+                        row.insertCell().innerHTML = v.is_itw
+                        row.insertCell().innerHTML = v.is_nuc
 
+                        _clipboard.push(v)
+                    })
+            } 
 
             document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
-            document.getElementById('checkcve').addEventListener('click', check_cve);
-            
+            document.getElementById('checkcve').addEventListener('click', run);            
         })()
         </script>
     </body>
