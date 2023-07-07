@@ -80,7 +80,7 @@
             
             let nuc = undefined
             let itw = undefined
-            let kev, catalog_version, catalog_date_released, catalog_count = undefined;
+            let kev, kev_version, kev_date_released, kev_count = undefined;
 
             Promise.all([
                 fetch('nuclei.txt').then(resp => resp.text()),
@@ -98,15 +98,7 @@
                 kev_count         = resp_kev.count
 
 
-                console.log(`[KEV] catalog version is ${catalog_version}`);
-
-                kev["vulnerabilities"].map(vuln => {
-                    if (nuc.some(template => vuln.cveID==template))
-                        vuln.poc="nuclei";
-                    else 
-                        vuln.poc="none";
-                    return vuln
-                })
+                console.log(`[KEV] catalog version is ${kev_version}`);
             })
 
             function copyAsJsonToClipboard() {
@@ -135,7 +127,7 @@
 
                 for (let [key, value] of Object.entries(report)) {
                     if (itw_cve.includes(key)) {
-                        value.is_inthewild = true;
+                        value.is_itw = true;
                     }
                     if (kev_cve.includes(key)) {
                         value.is_kev = true;
@@ -170,12 +162,12 @@
                   table.deleteRow(1);
                 }
 
-                report.map(v => {
+                Object.entries(report).map(([k,v]) => {
                         let row = table.insertRow()
                         row.classList.add("align-middle");
-                        row.insertCell().innerHTML = v.cveID
-                        row.insertCell().innerHTML = v.vulnerabilityName
-                        row.insertCell().innerHTML = v.shortDescription
+                        row.insertCell().innerHTML = k
+                        row.insertCell().innerHTML = ""
+                        row.insertCell().innerHTML = ""
                         row.insertCell().innerHTML = v.is_kev
                         row.insertCell().innerHTML = v.is_itw
                         row.insertCell().innerHTML = v.is_nuc
