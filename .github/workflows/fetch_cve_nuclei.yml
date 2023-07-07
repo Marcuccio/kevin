@@ -17,7 +17,6 @@ jobs:
           unzip master.zip nuclei-templates-master/cves/*
           find "./nuclei-templates-master/cves/" -type f -name "*.yaml" -exec basename {} \; > nuclei.txt
           sed -i 's/.yaml//g' "nuclei.txt"
-          dos2unix nuclei.txt
 
       - name: commit & push
         run: |
