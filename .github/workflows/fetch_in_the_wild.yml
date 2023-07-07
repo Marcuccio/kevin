@@ -15,4 +15,4 @@ jobs:
         run: |
           git config --global user.name 'Marcuccio'
           git config --global user.email 'marcuccio.dev@gmail.com'
-          git add inthewild.json && git commit -m "Automated fetch of in_the_wild" && git push
+          git add itw.json && git commit -m "Automated fetch of in_the_wild" && git push
