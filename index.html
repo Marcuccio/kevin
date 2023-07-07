@@ -117,7 +117,7 @@
             }
 
             function cves_from_kev(vuln) {
-              let cves = vuln.map(x => x.id);
+              let cves = vuln.map(x => x.cveID);
               return cves;
             }
 
@@ -174,7 +174,7 @@
 
                         _clipboard.push(v)
                     })
-            } 
+            }
 
             document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
             document.getElementById('checkcve').addEventListener('click', run);            
