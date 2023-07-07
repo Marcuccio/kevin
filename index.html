@@ -6,8 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" sizes="16x16" href="/kevin/favicon-32x32.png">
 
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -15,26 +18,31 @@
         <h4>Known Exploited Vulnerabilities Insights</h4>
         <iframe src="https://ghbtns.com/github-btn.html?user=marcuccio&repo=kevin&type=star&count=true&size=small" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
 
-        <div class="container">
-            <p>As you may already know there exist a curated list of actively exploited vulnerabilities curated by the Cybersecurity & Infrastructure Security Agency (CISA)</p>
-            <p>CISA will update this catalog with additional exploited vulnerabilities as they become known, subject to an executive level CISA review and when they satisfy the following thresholds:</p>
 
-            <ul>
-                <li>The vulnerability has an assigned Common Vulnerabilities and Exposures (CVE) ID.</li>
-                <li>There is reliable evidence that the vulnerability has been actively exploited in the wild.</li>
-                <li>There is a clear remediation action for the vulnerability, such as a vendor provided update.</li>
-            </ul>
 
-            <blockquote class="blockquote text-center">
-                <p class="mb-3">wish there was an easier way to read these. I need to know what they added and if the solution is fixed by a particular patch.</p>
-                <footer class="blockquote-footer">Someone on <cite title="Reddit">Reddit</cite></footer>
-            </blockquote> 
 
-            <p>You can use this tool to easily verify wether some of you CVE are marked as dangerous!</p>
-        </div>
+
+
         
-        <div class="container mt-5">
+        <div class="container">
             <div class="row">
+                <div class="col-lg-8 col-md-12 mt-md-3 mt-lg-0">
+                    <div class="container">
+                        <p class="justify">KEVIN is a powerful tool designed to empower your understanding of Common Vulnerabilities and Exposures (CVEs). With KEVIN, you can effortlessly prioritize CVE data, making informed decisions to enhance your cybersecurity measures. It retrieves valuable information from multiple sources:</p>
+
+                        <ul>
+                            <li><a href="https://inthewild.io/">in-the-wild data</a></li>
+                            <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV catalog</a></li>
+                            <li><a href="https://github.com/projectdiscovery/nuclei-templates">Nuclei from Project Discovery</a></li>
+                        </ul>            
+
+
+                        <p>You can use this tool to easily verify wether some of your CVEs are marked as dangerous!</p>
+                        <p>Simply provide a list of CVEs in the dedicated input field, and KEVIN takes care of the rest. </p>
+                        
+                    </div>
+                </div>
+
                 <div class="col-lg-4 col-md-12">
                     <div class="container">
                     <!--     
@@ -42,7 +50,7 @@
                         CVE-2021-27102 
                     -->
                         <textarea id='cvelist' name="textarea" class="form-control" required
-                            style="max-width:200px;height:160px;" placeholder="CVE-2021-27104&#13;&#10;CVE-2021-27102&#13;&#10;..."></textarea>
+                            style="max-width:250px;height:180px;" placeholder="CVE-2021-27104&#13;&#10;CVE-2021-27102&#13;&#10;..."></textarea>
                         
                         <div class="mt-3">
                             <button id="checkcve" class="btn btn-primary">Check CVE</button>
@@ -52,23 +60,28 @@
                     </div>
                 </div>
 
-                <div class="col-lg-8 col-md-12 mt-md-3 mt-lg-0">
-                    <table id="bin-table" class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>CVE</th>
-                                <th>Vulnerability name</th>
-                                <th>Short Description</th>
-                                <th>kev</th>
-                                <th>itw</th>
-                                <th>nuclei</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-
             </div>
+        </div>
+
+        <blockquote class="blockquote text-center" style="margin: 36px;">
+            <p class="mb-3">wish there was an easier way to read these.</p>
+            <footer class="blockquote-footer">Someone on <cite title="Reddit">Reddit</cite></footer>
+        </blockquote> 
+
+        <div class="container">
+            <table id="bin-table" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>CVE</th>
+                        <th>Vulnerability name</th>
+                        <th>Short Description</th>
+                        <th>kev</th>
+                        <th>itw</th>
+                        <th>nuclei</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
 
         <script type="text/javascript">
