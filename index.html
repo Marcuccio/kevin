@@ -126,11 +126,16 @@
                 let kev_cve = cves_from_kev(kev.vulnerabilities);
 
                 for (let [key, value] of Object.entries(report)) {
+                    value.vuln_name  = "";
+                    value.short_desc = "";
+
                     if (itw_cve.includes(key)) {
                         value.is_itw = true;
                     }
                     if (kev_cve.includes(key)) {
                         value.is_kev = true;
+                        value.vuln_name = kev.vulnerabilityName;
+                        value.short_desc = kev.shortDescription;
                     }
                     if (nuc_cve.includes(key)) {
                         value.is_nuclei = true;
@@ -166,8 +171,8 @@
                         let row = table.insertRow()
                         row.classList.add("align-middle");
                         row.insertCell().innerHTML = k
-                        row.insertCell().innerHTML = ""
-                        row.insertCell().innerHTML = ""
+                        row.insertCell().innerHTML = v.vuln_name
+                        row.insertCell().innerHTML = v.short_desc
                         row.insertCell().innerHTML = v.is_kev
                         row.insertCell().innerHTML = v.is_itw
                         row.insertCell().innerHTML = v.is_nuc
