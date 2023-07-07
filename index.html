@@ -121,6 +121,10 @@
               return cves;
             }
 
+            function find_kev_by_id(objects, id) {
+                return objects.find(obj => obj.cveID === id);
+            }
+
             function add_cve_knownledge(report, kev, itw, nuc_cve) {
                 let itw_cve = cves_from_itw(itw);
                 let kev_cve = cves_from_kev(kev.vulnerabilities);
@@ -134,8 +138,10 @@
                     }
                     if (kev_cve.includes(key)) {
                         value.is_kev = true;
-                        value.vuln_name = kev.vulnerabilityName;
-                        value.short_desc = kev.shortDescription;
+                        
+                        let temp = find_kev_by_id(kev.vulnerabilities, key);
+                        value.vuln_name = temp.vulnerabilityName;
+                        value.short_desc = temp.shortDescription;
                     }
                     if (nuc_cve.includes(key)) {
                         value.is_nuclei = true;
