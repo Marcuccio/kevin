@@ -11,7 +11,8 @@
     </head>
     <body>
         <div class="container">
-        <h1>Known Exploited Vulnerabilities Insights</h1>
+        <h1>KEVIN</h1>
+        <h4>Known Exploited Vulnerabilities Insights</h4>
         <iframe src="https://ghbtns.com/github-btn.html?user=marcuccio&repo=kevin&type=star&count=true&size=small" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
 
         <div class="container">
@@ -144,7 +145,7 @@
                         value.short_desc = temp.shortDescription;
                     }
                     if (nuc_cve.includes(key)) {
-                        value.is_nuclei = true;
+                        value.is_nuc = true;
                     }
                 }
 
@@ -152,11 +153,7 @@
             }
 
             function run(input) {
-
-                console.log(kev)
-                console.log(nuc)
-                console.log(itw)
-
+                _clipboard = [];
                 let report = {}; 
 
                 cvelist.value.split('\n').map(el => el.trim()).forEach(key => {
@@ -174,17 +171,17 @@
                 }
 
                 Object.entries(report).map(([k,v]) => {
-                        let row = table.insertRow()
-                        row.classList.add("align-middle");
-                        row.insertCell().innerHTML = k
-                        row.insertCell().innerHTML = v.vuln_name
-                        row.insertCell().innerHTML = v.short_desc
-                        row.insertCell().innerHTML = v.is_kev
-                        row.insertCell().innerHTML = v.is_itw
-                        row.insertCell().innerHTML = v.is_nuc
+                    let row = table.insertRow()
+                    row.classList.add("align-middle");
+                    row.insertCell().innerHTML = k
+                    row.insertCell().innerHTML = v.vuln_name
+                    row.insertCell().innerHTML = v.short_desc
+                    row.insertCell().innerHTML = v.is_kev
+                    row.insertCell().innerHTML = v.is_itw
+                    row.insertCell().innerHTML = v.is_nuc
 
-                        _clipboard.push(v)
-                    })
+                    _clipboard.push(v)
+                })
             }
 
             document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
