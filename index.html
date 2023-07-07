@@ -93,8 +93,8 @@
                 itw = resp_inthewild
                 kev = resp_kev
 
-                kev_version       = resp_kev.catalog_version
-                kev_date_released = resp_kev.catalog_date_released
+                kev_version       = resp_kev.catalogVersion
+                kev_date_released = resp_kev.dateReleased
                 kev_count         = resp_kev.count
 
 
@@ -144,6 +144,8 @@
                         value.is_nuclei = true;
                     }
                 }
+
+                return report;
             }
 
             function run(input) {
@@ -162,7 +164,7 @@
                     };
                 });
 
-                add_cve_knownledge(report, kev, itw, nuc);
+                report = add_cve_knownledge(report, kev, itw, nuc);
 
                 while(table.rows.length > 1) {
                   table.deleteRow(1);
