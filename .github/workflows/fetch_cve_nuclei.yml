@@ -11,11 +11,15 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: page
+          
+      - name: setup-yq
+        uses: chrisdickinson/setup-yq@v1.0.0
+
       - name: fetch nuclei_cves
         run: |
-          wget https://github.com/projectdiscovery/nuclei-templates/archive/master.zip
-          unzip master.zip nuclei-templates-master/cves/*
-          find "./nuclei-templates-master/cves/" -type f -name "*.yaml" -exec basename {} \; > nuclei.txt
+          wget https://github.com/projectdiscovery/nuclei-templates/archive/main.zip
+          unzip main.zip nuclei-templates-main/http/cves/*
+          find "./nuclei-templates-main/http/cves/" -type f -name "*.yaml" -exec basename {} \; > nuclei.txt
           sed -i 's/.yaml//g' "nuclei.txt"
 
       - name: commit & push
