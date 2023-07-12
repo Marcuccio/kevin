@@ -17,12 +17,6 @@
         <h1>KEVIN</h1>
         <h4>Known Exploited Vulnerabilities Insights</h4>
         <iframe src="https://ghbtns.com/github-btn.html?user=marcuccio&repo=kevin&type=star&count=true&size=small" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
-
-
-
-
-
-
         
         <div class="container">
             <div class="row">
@@ -144,6 +138,7 @@
                 let kev_cve = cves_from_kev(kev.vulnerabilities);
 
                 for (let [key, value] of Object.entries(report)) {
+                    value.id = key;
                     value.vuln_name  = "";
                     value.short_desc = "";
 
