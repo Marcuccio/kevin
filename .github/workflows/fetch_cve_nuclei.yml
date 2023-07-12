@@ -1,4 +1,4 @@
-name: Fetch CVE from nuclei@projectdiscovery
+name: Fetch nuclei cves
 on:
   schedule:
     - cron: '0 0/12 * * *'
@@ -23,4 +23,4 @@ jobs:
         run: |
           git config --global user.name 'Marcuccio'
           git config --global user.email 'marcuccio.dev@gmail.com'
-          (git add nuclei.txt && git commit -m "fetch of nuclei_cves" && git push) || exit 0
+          (git add nuclei.txt && git commit -m "fetch of nuclei cves" && git push) || exit 0

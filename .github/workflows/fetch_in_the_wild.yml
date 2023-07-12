@@ -1,4 +1,4 @@
-name: Fetch inthewild api
+name: Fetch inthewild
 on:
   schedule:
     - cron: '0 0/12 * * *'
@@ -10,9 +10,9 @@ jobs:
         with:
           ref: page
       - name: Fetch in_the_wild file
-        run: wget https://inthewild.io/api/exploited -O inthewild.json
+        run: wget https://inthewild.io/api/exploited -O itw.json
       - name: Commit in_the_wild
         run: |
           git config --global user.name 'Marcuccio'
           git config --global user.email 'marcuccio.dev@gmail.com'
-          git add itw.json && git commit -m "Automated fetch of in_the_wild" && git push
+          (git add itw.json && git commit -m "fetch inthewild" && git push) || exit 0
