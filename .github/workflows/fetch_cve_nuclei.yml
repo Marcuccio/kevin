@@ -15,12 +15,11 @@ jobs:
       - name: fetch nuclei_cves
         run: |
           wget https://github.com/projectdiscovery/nuclei-templates/archive/main.zip
-          unzip main.zip nuclei-templates-main/*/cves/*
-          find "./nuclei-templates-main/http/cves/" "./nuclei-templates-main/network/cves/" -type f -name "*.yaml" -exec basename {} \; > nuclei.txt
-          sed -i 's/.yaml//g' "nuclei.txt"
-
+          unzip main.zip nuclei-templates-main/cves.json
+          mv ./nuclei-templates-main/cves.json ./nuclei.json
+          
       - name: commit & push
         run: |
           git config --global user.name 'Marcuccio'
           git config --global user.email 'marcuccio.dev@gmail.com'
-          (git add nuclei.txt && git commit -m "fetch of nuclei cves" && git push) || exit 0
+          (git add nuclei.json && git commit -m "fetch of nuclei cves" && git push) || exit 0
