@@ -6,6 +6,7 @@ use serde::{Deserialize};
 
 const URL_KEVIN: &str = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json";
 const URL_INTHEWILD: &str = "https://inthewild.io/api/exploited";
+const URL_NUCLEI: &str = "https://raw.githubusercontent.com/Marcuccio/kevin/page/nuclei.json";
 
 mod util;
 
@@ -35,7 +36,17 @@ fn cves_from_kev(vuln: &[Kev]) -> Vec<String> {
     cves
 }
 
-fn add_cve_knownledge(report: &mut HashMap<String, Source>, itw: &[Inthewild], kev: &KevWrapper, nuc_cve: &[String]) {
+fn cves_from_nuc(vuln: &[Nuc]) -> Vec<String> {
+    let cves = vuln
+    .iter()
+    .map(|x| x.id.clone())
+    .collect::<Vec<String>>();
+    
+    cves
+}
+
+fn add_cve_knownledge(report: &mut HashMap<String, Source>, itw: &[Inthewild], kev: &KevWrapper, nuc: &[Nuc]) {
+    let nuc_cve = cves_from_nuc(nuc);
     let itw_cve = cves_from_itw(itw);
     let kev_cve = cves_from_kev(&kev.vulnerabilities);
 
@@ -67,8 +78,8 @@ pub fn run(input: &[String]) -> Result<HashMap<String, Source>, String>{
             util::dwnld_from_url(URL_KEVIN).unwrap()
         ).unwrap();
 
-    let nuc = util::read_file_to_vec(
-        "C:\\Users\\mstrambelli\\Tools\\kevin\\src\\nuclei_cves"
+    let nuc: Vec<Nuc> = serde_json::from_reader(
+            util::dwnld_from_url(URL_NUCLEI).unwrap()
         ).unwrap();
 
     add_cve_knownledge(&mut report, &itw, &kev, &nuc);
@@ -148,4 +159,26 @@ struct Kev {
     #[serde(rename = "dueDate")]
     due_date: String,
     notes: String
- }
+}
+
+#[allow(unused_variables)]
+#[derive(Debug, Deserialize)]
+struct Nuc {
+    #[serde(rename = "ID")]
+    id: String,
+    #[serde(rename = "Info")]
+    info: NucInfo,
+    file_path: String
+}
+
+
+#[allow(unused_variables)]
+#[derive(Debug, Deserialize)]
+struct NucInfo {
+    #[serde(rename = "Name")]
+    name: String,
+    #[serde(rename = "Severity")]
+    severity: String,
+    #[serde(rename = "Description")]
+    description: String
+}
