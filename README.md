@@ -1,9 +1,9 @@
 # Kevin
 KEVIN is a powerful tool designed to empower your understanding of Common Vulnerabilities and Exposures (CVEs). With KEVIN, you can effortlessly prioritize CVE data, making informed decisions to enhance your cybersecurity measures. It retrieves valuable information from multiple sources:
 
-- inthewild: https://inthewild.io/api/exploited
-- kevin: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
-- Nuclei: https://github.com/projectdiscovery/nuclei-templates
+- [inthewild](https://inthewild.io/api/exploited)
+- [kevin](https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json)
+- [Nuclei](https://github.com/projectdiscovery/nuclei-templates)
 
 You can use this tool to easily verify wether some of your CVEs are marked as dangerous!
 
