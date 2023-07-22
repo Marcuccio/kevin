@@ -16,7 +16,7 @@ jobs:
         run: |
           wget https://github.com/projectdiscovery/nuclei-templates/archive/main.zip
           unzip main.zip nuclei-templates-main/cves.json
-          mv ./nuclei-templates-main/cves.json ./nuclei.json
+          awk 'BEGIN {print "[";} NF==0{next;} n=="" {print;n++;next;} {print ","; print;} END {print "]"}' ./nuclei-templates-main/cves.json > nuclei.json
           
       - name: commit & push
         run: |
