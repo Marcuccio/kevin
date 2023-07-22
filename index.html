@@ -91,13 +91,13 @@
             let kev, kev_version, kev_date_released, kev_count = undefined;
 
             Promise.all([
-                fetch('nuclei.txt').then(resp => resp.text()),
+                fetch('nuclei.json').then(resp => resp.json()),
                 fetch('kev.json').then(resp => resp.json()),
                 fetch('itw.json').then(resp => resp.json())
             ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => 
             {
 
-                nuc = resp_nuclei.split("\n")
+                nuc = resp_nuclei
                 itw = resp_inthewild
                 kev = resp_kev
 
@@ -119,6 +119,11 @@
                 document.body.removeChild(dummy);
             }
 
+            function cves_from_nuc(nuc) {
+              let cves = nuc.map(x => x.ID);
+              return cves;
+            }
+
             function cves_from_itw(itw) {
               let cves = itw.map(x => x.id);
               return cves;
@@ -129,11 +134,16 @@
               return cves;
             }
 
+            function find_nuc_by_id(objects, id) {
+                return objects.find(obj => obj.ID === id);
+            }            
+
             function find_kev_by_id(objects, id) {
                 return objects.find(obj => obj.cveID === id);
             }
 
-            function add_cve_knownledge(report, kev, itw, nuc_cve) {
+            function add_cve_knownledge(report, kev, itw, nuc) {
+                let nuc_cve = cves_from_nuc(nuc);
                 let itw_cve = cves_from_itw(itw);
                 let kev_cve = cves_from_kev(kev.vulnerabilities);
 
@@ -154,6 +164,10 @@
                     }
                     if (nuc_cve.includes(key)) {
                         value.is_nuc = true;
+
+                        let temp = find_nuc_by_id(nuc, key);
+                        value.vuln_name = temp.Info.Name;
+                        value.short_desc = temp.Info.Description;
                     }
                 }
 
