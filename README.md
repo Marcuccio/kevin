@@ -75,3 +75,5 @@ Contributions are always welcome! Please create a PR to add Github Profile.
 This project is licensed under [GPL-3.0](https://opensource.org/license/gpl-3-0/) license.
 
 ## :man_astronaut: Show your support
+
+Give a ⭐️ if this project helped you!
