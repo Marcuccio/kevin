@@ -66,3 +66,12 @@ fn main() {
     // Do something with the report...
 }
 ````
+# Contribute
+
+Contributions are always welcome! Please create a PR to add Github Profile.
+
+## :pencil: License
+
+This project is licensed under [GPL-3.0](https://opensource.org/license/gpl-3-0/) license.
+
+## :man_astronaut: Show your support
