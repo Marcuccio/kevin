@@ -2335,6 +2335,8 @@
 ,
 {"ID":"CVE-2021-27651","Info":{"Name":"Pega Infinity - Authentication Bypass","Severity":"critical","Description":"Pega Infinity versions 8.2.1 through 8.5.2 contain an authentication bypass vulnerability because the password reset functionality for local accounts can be used to bypass local authentication checks.","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2021/CVE-2021-27651.yaml"}
 ,
+{"ID":"CVE-2021-27670","Info":{"Name":"Appspace 6.2.4 - Server-Side Request Forgery","Severity":"high","Description":"Appspace 6.2.4 allows SSRF via the api/v1/core/proxy/jsonprequest url parameter.","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2021/CVE-2021-27670.yaml"}
+,
 {"ID":"CVE-2021-27748","Info":{"Name":"IBM WebSphere HCL Digital Experience - Server-Side Request Forgery","Severity":"high","Description":"IBM WebSphere HCL Digital Experience is vulnerable to server-side request forgery that impacts on-premise deployments and containers.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2021/CVE-2021-27748.yaml"}
 ,
 {"ID":"CVE-2021-27850","Info":{"Name":"Apache Tapestry - Remote Code Execution","Severity":"critical","Description":"Apache Tapestry contains a critical unauthenticated remote code execution vulnerability. Affected versions include 5.4.5, 5.5.0, 5.6.2 and 5.7.0. Note that this vulnerability is a bypass of the fix for CVE-2019-0195. Before that fix it was possible to download arbitrary class files from the classpath by providing a crafted asset file URL.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2021/CVE-2021-27850.yaml"}
@@ -2732,6 +2734,8 @@
 {"ID":"CVE-2021-44077","Info":{"Name":"Zoho ManageEngine ServiceDesk Plus - Remote Code Execution","Severity":"critical","Description":"Zoho ManageEngine ServiceDesk Plus before 11306, ServiceDesk Plus MSP before 10530, and SupportCenter Plus before 11014 are vulnerable to unauthenticated remote code execution.","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2021/CVE-2021-44077.yaml"}
 ,
 {"ID":"CVE-2021-44138","Info":{"Name":"Caucho Resin \u003e=4.0.52 \u003c=4.0.56 - Directory traversal","Severity":"high","Description":"There is a Directory traversal vulnerability in Caucho Resin, as distributed in Resin 4.0.52 - 4.0.56, which allows remote attackers to read files in arbitrary directories via a ; in a pathname within an HTTP request.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2021/CVE-2021-44138.yaml"}
+,
+{"ID":"CVE-2021-44139","Info":{"Name":"Alibaba Sentinel - Server-side request forgery (SSRF)","Severity":"high","Description":"","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2021/CVE-2021-44139.yaml"}
 ,
 {"ID":"CVE-2021-44152","Info":{"Name":"Reprise License Manager 14.2 - Authentication Bypass","Severity":"critical","Description":"Reprise License Manager (RLM) 14.2 does not verify authentication or authorization and allows unauthenticated users to change the password of any existing user.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2021/CVE-2021-44152.yaml"}
 ,
@@ -3700,6 +3704,8 @@
 {"ID":"CVE-2023-2122","Info":{"Name":"Image Optimizer by 10web \u003c 1.0.26 - Cross-Site Scripting","Severity":"medium","Description":"Image Optimizer by 10web before 1.0.26 is susceptible to cross-site scripting via the iowd_tabs_active parameter due to insufficient input sanitization and output escaping. An attacker can inject arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-2122.yaml"}
 ,
 {"ID":"CVE-2023-2130","Info":{"Name":"Purchase Order Management v1.0 - SQL Injection","Severity":"critical","Description":"A vulnerability classified as critical has been found in SourceCodester Purchase Order Management System 1.0. Affected is an unknown function of the file /admin/suppliers/view_details.php of the component GET Parameter Handler. The manipulation of the argument id leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. VDB-226206 is the identifier assigned to this vulnerability.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-2130.yaml"}
+,
+{"ID":"CVE-2023-2178","Info":{"Name":"Aajoda Testimonials \u003c 2.2.2 - Cross-Site Scripting","Severity":"medium","Description":"The plugin does not sanitize and escape some of its settings, which could allow high-privilege users such as admin to perform Stored Cross-Site Scripting attacks even when the unfiltered_html capability is disallowed (for example in multisite setup).\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2023/CVE-2023-2178.yaml"}
 ,
 {"ID":"CVE-2023-2252","Info":{"Name":"Directorist \u003c 7.5.4 - Local File Inclusion","Severity":"medium","Description":"Directorist before 7.5.4 is susceptible to Local File Inclusion as it does not validate the file parameter when importing CSV files.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2023/CVE-2023-2252.yaml"}
 ,
