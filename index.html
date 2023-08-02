@@ -17,7 +17,7 @@
         <h1>KEVIN</h1>
         <h4>Known Exploited Vulnerabilities Insights</h4>
         <iframe src="https://ghbtns.com/github-btn.html?user=marcuccio&repo=kevin&type=star&count=true&size=small" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
-        
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12 mt-md-3 mt-lg-0">
@@ -28,29 +28,29 @@
                             <li><a href="https://inthewild.io/">in-the-wild data</a></li>
                             <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV catalog</a></li>
                             <li><a href="https://github.com/projectdiscovery/nuclei-templates">Nuclei from Project Discovery</a></li>
-                        </ul>            
+                        </ul>
 
 
                         <p>You can use this tool to easily verify wether some of your CVEs are marked as dangerous!</p>
                         <p>Simply provide a list of CVEs in the dedicated input field, and KEVIN takes care of the rest. </p>
-                        
+
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-12">
                     <div class="container">
-                    <!--     
+                    <!--
                         CVE-2021-27104
-                        CVE-2021-27102 
+                        CVE-2021-27102
                     -->
                         <textarea id='cvelist' name="textarea" class="form-control" required
                             style="max-width:250px;height:180px;" placeholder="CVE-2021-27104&#13;&#10;CVE-2021-27102&#13;&#10;..."></textarea>
-                        
+
                         <div class="mt-3">
                             <button id="checkcve" class="btn btn-primary">Check CVE</button>
                             <button id="copyjson" class="btn btn-primary">Copy table as JSON</button>
-                        </div>                        
-                        
+                        </div>
+
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
         <blockquote class="blockquote text-center" style="margin: 36px;">
             <p class="mb-3">wish there was an easier way to read these.</p>
             <footer class="blockquote-footer">Someone on <cite title="Reddit">Reddit</cite></footer>
-        </blockquote> 
+        </blockquote>
 
         <div class="container">
             <table id="bin-table" class="table table-hover">
@@ -87,7 +87,7 @@
             const thead   = table.tHead
             const tbody   = table.tBodies[0]
             let _clipboard = [];
-            
+
             let nuc = undefined
             let itw = undefined
             let kev, kev_version, kev_date_released, kev_count = undefined;
@@ -96,7 +96,7 @@
                 fetch('nuclei.json').then(resp => resp.json()),
                 fetch('kev.json').then(resp => resp.json()),
                 fetch('itw.json').then(resp => resp.json())
-            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => 
+            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) =>
             {
 
                 nuc = resp_nuclei
@@ -137,7 +137,7 @@
 
             function find_nuc_by_id(objects, id) {
                 return objects.find(obj => obj.ID === id);
-            }            
+            }
 
             function find_kev_by_id(objects, id) {
                 return objects.find(obj => obj.cveID === id);
@@ -158,7 +158,7 @@
                     }
                     if (kev_cve.includes(key)) {
                         value.is_kev = true;
-                        
+
                         let temp = find_kev_by_id(kev.vulnerabilities, key);
                         value.vuln_name = temp.vulnerabilityName;
                         value.short_desc = temp.shortDescription;
@@ -177,7 +177,7 @@
 
             function run(input) {
                 _clipboard = [];
-                let report = {}; 
+                let report = {};
 
                 cvelist.value.split('\n').map(el => el.trim()).forEach(key => {
                     report[key] = {
@@ -199,7 +199,7 @@
                     row.insertCell().innerHTML = k
                     row.insertCell().innerHTML = v.vuln_name
                     row.insertCell().innerHTML = v.short_desc
-                    
+
                     let isKevCell = row.insertCell();
                     if (v.is_kev) {isKevCell.style.color = "red";}
                     isKevCell.innerHTML = v.is_kev
@@ -237,10 +237,10 @@
 
                     tBody.append(...rows);
                 });
-            }            }
+            }
 
             document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
-            document.getElementById('checkcve').addEventListener('click', run);           
+            document.getElementById('checkcve').addEventListener('click', run);
         })()
         </script>
     </body>
