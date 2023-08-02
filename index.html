@@ -98,9 +98,9 @@
             ]).then(([nuc, itw, kev]) => 
             {
 
-                kev_version       = resp_kev.catalogVersion
-                kev_date_released = resp_kev.dateReleased
-                kev_count         = resp_kev.count
+                kev_version       = kev.catalogVersion
+                kev_date_released = kev.dateReleased
+                kev_count         = kev.count
 
                 console.log(`[KEV] catalog version is ${kev_version}`);
             })
