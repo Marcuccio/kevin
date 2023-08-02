@@ -223,7 +223,7 @@
                 const cellIndex = th.cellIndex;
 
                 th.addEventListener("click", () => {
-                    const rows = Array.from(tBody.rows);
+                    const rows = Array.from(tbody.rows);
 
                     while(tbody.rows.length > 0) {
                         tbody.deleteRow(-1);
@@ -235,7 +235,7 @@
                         return tr1Text.localeCompare(tr2Text)*-1;
                     });
 
-                    tBody.append(...rows);
+                    tbody.append(...rows);
                 });
             }
 
