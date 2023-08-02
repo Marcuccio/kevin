@@ -95,12 +95,16 @@
                 fetch('nuclei.json').then(resp => resp.json()),
                 fetch('kev.json').then(resp => resp.json()),
                 fetch('itw.json').then(resp => resp.json())
-            ]).then(([nuc, itw, kev]) => 
+            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => 
             {
 
-                kev_version       = kev.catalogVersion
-                kev_date_released = kev.dateReleased
-                kev_count         = kev.count
+                nuc = resp_nuclei
+                itw = resp_inthewild
+                kev = resp_kev
+
+                kev_version       = resp_kev.catalogVersion
+                kev_date_released = resp_kev.dateReleased
+                kev_count         = resp_kev.count
 
                 console.log(`[KEV] catalog version is ${kev_version}`);
             })
