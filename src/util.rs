@@ -68,9 +68,9 @@ pub fn info(msg: String) {
 }
 
 pub fn warn(msg: String) {
-    println!("{} {}", "[WRN]".yellow(), msg);
+    eprintln!("{} {}", "[WRN]".yellow(), msg);
 }
 
 pub fn error(msg: String) {
-    println!("{} {}", "[ERR]".magenta (), msg);
+    eprintln!("{} {}", "[ERR]".magenta (), msg);
 }
