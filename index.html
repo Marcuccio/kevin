@@ -82,9 +82,10 @@
         (function () {
         'use strict'
 
-            let cvelist = document.getElementById('cvelist')
-            let table   = document.getElementById('bin-table')
-            let tbody   = table.tBodies[0]
+            const cvelist = document.getElementById('cvelist')
+            const table   = document.getElementById('bin-table')
+            const thead   = table.tHead
+            const tbody   = table.tBodies[0]
             let _clipboard = [];
             
             let nuc = undefined
@@ -188,8 +189,8 @@
 
                 report = add_cve_knownledge(report, kev, itw, nuc);
 
-                while(table.rows.length > 1) {
-                  tbody.deleteRow(1);
+                while(table.rows.length > 0) {
+                  tbody.deleteRow(-1);
                 }
 
                 Object.entries(report).map(([k,v]) => {
@@ -216,8 +217,30 @@
                 })
             }
 
+            const headerCells = thead.rows[0].cells;
+
+            for (const th of headerCells) {
+                const cellIndex = th.cellIndex;
+
+                th.addEventListener("click", () => {
+                    const rows = Array.from(tBody.rows);
+
+                    while(table.rows.length > 0) {
+                        tbody.deleteRow(-1);
+                    }
+
+                    rows.sort((tr1, tr2) => {
+                        const tr1Text = tr1.cells[cellIndex].textContent;
+                        const tr2Text = tr2.cells[cellIndex].textContent;
+                        return tr1Text.localeCompare(tr2Text)*-1;
+                    });
+
+                    tBody.append(...rows);
+                });
+            }            }
+
             document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
-            document.getElementById('checkcve').addEventListener('click', run);            
+            document.getElementById('checkcve').addEventListener('click', run);           
         })()
         </script>
     </body>
