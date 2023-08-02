@@ -84,6 +84,7 @@
 
             let cvelist = document.getElementById('cvelist')
             let table   = document.getElementById('bin-table')
+            let tbody   = table.tBodies[0]
             let _clipboard = [];
             
             let nuc = undefined
@@ -94,17 +95,12 @@
                 fetch('nuclei.json').then(resp => resp.json()),
                 fetch('kev.json').then(resp => resp.json()),
                 fetch('itw.json').then(resp => resp.json())
-            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => 
+            ]).then(([nuc, itw, kev]) => 
             {
-
-                nuc = resp_nuclei
-                itw = resp_inthewild
-                kev = resp_kev
 
                 kev_version       = resp_kev.catalogVersion
                 kev_date_released = resp_kev.dateReleased
                 kev_count         = resp_kev.count
-
 
                 console.log(`[KEV] catalog version is ${kev_version}`);
             })
@@ -189,18 +185,28 @@
                 report = add_cve_knownledge(report, kev, itw, nuc);
 
                 while(table.rows.length > 1) {
-                  table.deleteRow(1);
+                  tbody.deleteRow(1);
                 }
 
                 Object.entries(report).map(([k,v]) => {
-                    let row = table.insertRow()
+                    let row = tbody.insertRow()
                     row.classList.add("align-middle");
                     row.insertCell().innerHTML = k
                     row.insertCell().innerHTML = v.vuln_name
                     row.insertCell().innerHTML = v.short_desc
-                    row.insertCell().innerHTML = v.is_kev
-                    row.insertCell().innerHTML = v.is_itw
-                    row.insertCell().innerHTML = v.is_nuc
+                    
+                    let isKevCell = row.insertCell();
+                    if (v.is_kev) {isKevCell.style.color = "red";}
+                    isKevCell.innerHTML = v.is_kev
+
+                    let isItwCell = row.insertCell();
+                    if (v.is_itw) {isItwCell.style.color = "red";}
+                    isItwCell.innerHTML = v.is_itw
+
+                    let isNucCell = row.insertCell();
+                    if (v.is_nuc) {isNucCell.style.color = "red";}
+                    isNucCell.innerHTML = v.is_nuc
+
 
                     _clipboard.push(v)
                 })
