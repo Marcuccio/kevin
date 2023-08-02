@@ -189,7 +189,7 @@
 
                 report = add_cve_knownledge(report, kev, itw, nuc);
 
-                while(table.rows.length > 0) {
+                while(tbody.rows.length > 0) {
                   tbody.deleteRow(-1);
                 }
 
@@ -225,7 +225,7 @@
                 th.addEventListener("click", () => {
                     const rows = Array.from(tBody.rows);
 
-                    while(table.rows.length > 0) {
+                    while(tbody.rows.length > 0) {
                         tbody.deleteRow(-1);
                     }
 
