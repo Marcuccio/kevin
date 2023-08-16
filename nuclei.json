@@ -2185,6 +2185,8 @@
 ,
 {"ID":"CVE-2021-24407","Info":{"Name":"WordPress Jannah Theme \u003c5.4.5 - Cross-Site Scripting","Severity":"medium","Description":"WordPress Jannah theme before 5.4.5 contains a reflected cross-site scripting vulnerability. It does not properly sanitize the 'query' POST parameter in its tie_ajax_search AJAX action.","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2021/CVE-2021-24407.yaml"}
 ,
+{"ID":"CVE-2021-24409","Info":{"Name":"Prismatic \u003c 2.8 - Cross-Site Scripting","Severity":"medium","Description":"The plugin does not escape the 'tab' GET parameter before outputting it back in an attribute, leading to a reflected Cross-Site Scripting issue which will be executed in the context of a logged in administrator\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2021/CVE-2021-24409.yaml"}
+,
 {"ID":"CVE-2021-24435","Info":{"Name":"WordPress Titan Framework plugin \u003c= 1.12.1 - Cross-Site Scripting","Severity":"medium","Description":"The iframe-font-preview.php file of the titan-framework does not properly escape the font-weight and font-family GET parameters before outputting them back in an href attribute, leading to Reflected Cross-Site Scripting issues.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2021/CVE-2021-24435.yaml"}
 ,
 {"ID":"CVE-2021-24436","Info":{"Name":"WordPress W3 Total Cache \u003c2.1.4 - Cross-Site Scripting","Severity":"medium","Description":"WordPress W3 Total Cache plugin before 2.1.4 is susceptible to cross-site scripting within the extension parameter in the Extensions dashboard, which is output in an attribute without being escaped first. This can allow an attacker to convince an authenticated admin into clicking a link to run malicious JavaScript within the user's web browser, which could lead to full site compromise.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2021/CVE-2021-24436.yaml"}
@@ -2262,6 +2264,8 @@
 {"ID":"CVE-2021-25055","Info":{"Name":"WordPress FeedWordPress \u003c 2022.0123 - Authenticated Cross-Site Scripting","Severity":"medium","Description":"The plugin is affected by a cross-site scripting vulnerability within the \"visibility\" parameter.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2021/CVE-2021-25055.yaml"}
 ,
 {"ID":"CVE-2021-25063","Info":{"Name":"WordPress Contact Form 7 Skins \u003c=2.5.0 - Cross-Site Scripting","Severity":"medium","Description":"WordPress Contact Form 7 Skins plugin 2.5.0 and prior contains a reflected cross-site scripting vulnerability. It does not sanitize and escape the tab parameter before outputting it back in an admin page.","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2021/CVE-2021-25063.yaml"}
+,
+{"ID":"CVE-2021-25065","Info":{"Name":"Smash Balloon Social Post Feed \u003c 4.1.1 - Authenticated Reflected Cross-Site Scripting","Severity":"medium","Description":"The plugin was affected by a reflected XSS in custom-facebook-feed in cff-top admin page.\n","Classification":{"CVSSScore":"5.4"}},"file_path":"http/cves/2021/CVE-2021-25065.yaml"}
 ,
 {"ID":"CVE-2021-25067","Info":{"Name":"Landing Page Builder \u003c 1.4.9.6 - Cross-Site Scripting","Severity":"medium","Description":"The Landing Page Builder WordPress plugin before 1.4.9.6 was affected by a reflected XSS in page-builder-add on the ulpb_post admin page.\n","Classification":{"CVSSScore":"5.4"}},"file_path":"http/cves/2021/CVE-2021-25067.yaml"}
 ,
@@ -3962,4 +3966,6 @@
 {"ID":"CVE-2023-39143","Info":{"Name":"PaperCut \u003c 22.1.3 - Path Traversal","Severity":"critical","Description":"PaperCut NG and PaperCut MF before 22.1.3 are vulnerable to path traversal which enables attackers to read, delete, and upload arbitrary files.","Classification":{"CVSSScore":"9.4"}},"file_path":"http/cves/2023/CVE-2023-39143.yaml"}
 ,
 {"ID":"CVE-2023-4174","Info":{"Name":"mooSocial 3.1.6 - Reflected Cross Site Scripting","Severity":"medium","Description":"A vulnerability has been found in mooSocial mooStore 3.1.6 and classified as problematic. Affected by this vulnerability is an unknown functionality. The manipulation leads to cross site scripting. The attack can be launched remotely.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2023/CVE-2023-4174.yaml"}
+,
+{"ID":"CVE-2015-9323","Info":{"Name":"404 to 301 \u003c= 2.0.2 - Authenticated Blind SQL Injection","Severity":"critical","Description":"The 404 to 301 – Redirect, Log and Notify 404 Errors WordPress plugin was affected by an Authenticated Blind SQL Injection security vulnerability.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/CVE-2015-9323.yaml"}
 ]
