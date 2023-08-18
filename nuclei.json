@@ -615,6 +615,8 @@
 ,
 {"ID":"CVE-2015-9312","Info":{"Name":"NewStatPress \u003c=1.0.4 - Cross-Site Scripting","Severity":"medium","Description":"WordPress NewStatPress plugin through 1.0.4 contains a cross-site scripting vulnerability. The plugin utilizes, on lines 28 and 31 of the file \"includes/nsp_search.php\", several variables from the $_GET scope without sanitation. While WordPress automatically escapes quotes on this scope, the outputs on these lines are outside of quotes, and as such can be utilized to initiate a cross-site scripting attack.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2015/CVE-2015-9312.yaml"}
 ,
+{"ID":"CVE-2015-9323","Info":{"Name":"404 to 301 \u003c= 2.0.2 - Authenticated Blind SQL Injection","Severity":"critical","Description":"The 404 to 301 – Redirect, Log and Notify 404 Errors WordPress plugin was affected by an Authenticated Blind SQL Injection security vulnerability.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2015/CVE-2015-9323.yaml"}
+,
 {"ID":"CVE-2015-9414","Info":{"Name":"WordPress Symposium \u003c=15.8.1 - Cross-Site Scripting","Severity":"medium","Description":"WordPress Symposium through 15.8.1 contains a reflected cross-site scripting vulnerability via the wp-content/plugins/wp-symposium/get_album_item.php?size parameter which allows an attacker to steal cookie-based authentication credentials and launch other attacks.","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2015/CVE-2015-9414.yaml"}
 ,
 {"ID":"CVE-2015-9480","Info":{"Name":"WordPress RobotCPA 5 - Directory Traversal","Severity":"high","Description":"The RobotCPA plugin 5 for WordPress has directory traversal via the f.php l parameter.","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2015/CVE-2015-9480.yaml"}
@@ -3651,6 +3653,8 @@
 ,
 {"ID":"CVE-2022-46443","Info":{"Name":"Bangresto - SQL Injection","Severity":"high","Description":"Bangresto 1.0 is vulnberable to SQL Injection via the itemqty%5B%5D parameter.\n","Classification":{"CVSSScore":"8.8"}},"file_path":"http/cves/2022/CVE-2022-46443.yaml"}
 ,
+{"ID":"CVE-2022-46463","Info":{"Name":"Harbor \u003c=2.5.3 - Unauthorized Access","Severity":"high","Description":"An access control issue in Harbor v1.X.X to v2.5.3 allows attackers to access public and private image repositories without authentication\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2022/CVE-2022-46463.yaml"}
+,
 {"ID":"CVE-2022-46888","Info":{"Name":"NexusPHP \u003c1.7.33 - Cross-Site Scripting","Severity":"medium","Description":"NexusPHP before 1.7.33 contains multiple cross-site scripting vulnerabilities via the secret parameter in /login.php; q parameter in /user-ban-log.php; query parameter in /log.php; text parameter in /moresmiles.php; q parameter in myhr.php; or id parameter in /viewrequests.php. An attacker can inject arbitrary web script or HTML, which can allow theft of cookie-based authentication credentials and launch of other attacks..\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2022/CVE-2022-46888.yaml"}
 ,
 {"ID":"CVE-2022-46934","Info":{"Name":"kkFileView 4.1.0 - Cross-Site Scripting","Severity":"medium","Description":"kkFileView 4.1.0 is susceptible to cross-site scripting via the url parameter at /controller/OnlinePreviewController.java. An attacker can inject arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2022/CVE-2022-46934.yaml"}
@@ -3966,6 +3970,4 @@
 {"ID":"CVE-2023-39143","Info":{"Name":"PaperCut \u003c 22.1.3 - Path Traversal","Severity":"critical","Description":"PaperCut NG and PaperCut MF before 22.1.3 are vulnerable to path traversal which enables attackers to read, delete, and upload arbitrary files.","Classification":{"CVSSScore":"9.4"}},"file_path":"http/cves/2023/CVE-2023-39143.yaml"}
 ,
 {"ID":"CVE-2023-4174","Info":{"Name":"mooSocial 3.1.6 - Reflected Cross Site Scripting","Severity":"medium","Description":"A vulnerability has been found in mooSocial mooStore 3.1.6 and classified as problematic. Affected by this vulnerability is an unknown functionality. The manipulation leads to cross site scripting. The attack can be launched remotely.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2023/CVE-2023-4174.yaml"}
-,
-{"ID":"CVE-2015-9323","Info":{"Name":"404 to 301 \u003c= 2.0.2 - Authenticated Blind SQL Injection","Severity":"critical","Description":"The 404 to 301 – Redirect, Log and Notify 404 Errors WordPress plugin was affected by an Authenticated Blind SQL Injection security vulnerability.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/CVE-2015-9323.yaml"}
 ]
