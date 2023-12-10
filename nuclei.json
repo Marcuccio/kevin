@@ -4237,7 +4237,7 @@
 ,
 {"ID":"CVE-2023-34756","Info":{"Name":"Bloofox v0.5.2.1 - SQL Injection","Severity":"critical","Description":"Bloofox v0.5.2.1 was discovered to contain a SQL injection vulnerability via the cid parameter at admin/index.php?mode=settings\u0026page=charset\u0026action=edit.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-34756.yaml"}
 ,
-{"ID":"CVE-2023-3479","Info":{"Name":"Hestiacp \u003c= 1.7.8 - Cross-Site Scripting","Severity":"medium","Description":"Cross-site Scripting (XSS) - Reflected in GitHub repository hestiacp/hestiacp prior to 1.7.8.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-3479.yaml"}
+{"ID":"CVE-2023-3479","Info":{"Name":"Hestiacp \u003c= 1.7.7 - Cross-Site Scripting","Severity":"medium","Description":"Cross-site Scripting (XSS) - Reflected in GitHub repository hestiacp/hestiacp prior to 1.7.8.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-3479.yaml"}
 ,
 {"ID":"CVE-2023-34843","Info":{"Name":"Traggo Server - Local File Inclusion","Severity":"high","Description":"traggo/server version 0.3.0 is vulnerable to directory traversal.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-34843.yaml"}
 ,
@@ -4254,6 +4254,8 @@
 {"ID":"CVE-2023-35844","Info":{"Name":"Lightdash version \u003c= 0.510.3 Arbitrary File Read","Severity":"high","Description":"packages/backend/src/routers in Lightdash before 0.510.3\nhas insecure file endpoints, e.g., they allow .. directory\ntraversal and do not ensure that an intended file extension\n(.csv or .png) is used.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-35844.yaml"}
 ,
 {"ID":"CVE-2023-35885","Info":{"Name":"Cloudpanel 2 \u003c 2.3.1 - Remote Code Execution","Severity":"critical","Description":"CloudPanel 2 before 2.3.1 has insecure file-manager cookie authentication.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-35885.yaml"}
+,
+{"ID":"CVE-2023-36144","Info":{"Name":"Intelbras Switch - Information Disclosure","Severity":"high","Description":"An authentication bypass in Intelbras Switch SG 2404 MR in firmware 1.00.54 allows an unauthenticated attacker to download the backup file of the device, exposing critical information about the device configuration.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-36144.yaml"}
 ,
 {"ID":"CVE-2023-36287","Info":{"Name":"Webkul QloApps 1.6.0 - Cross-site Scripting","Severity":"medium","Description":"An unauthenticated Cross-Site Scripting (XSS) vulnerability found in Webkul QloApps 1.6.0 allows an attacker to obtain a user's session cookie and then impersonate that user via POST controller parameter.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-36287.yaml"}
 ,
@@ -4318,6 +4320,8 @@
 {"ID":"CVE-2023-38501","Info":{"Name":"CopyParty v1.8.6 - Cross Site Scripting","Severity":"medium","Description":"Copyparty is a portable file server. Versions prior to 1.8.6 are subject to a reflected cross-site scripting (XSS) Attack.Vulnerability that exists in the web interface of the application could allow an attacker to execute malicious javascript code by tricking users into accessing a malicious link.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-38501.yaml"}
 ,
 {"ID":"CVE-2023-38646","Info":{"Name":"Metabase \u003c 0.46.6.1 - Remote Code Execution","Severity":"critical","Description":"Metabase open source before 0.46.6.1 and Metabase Enterprise before 1.46.6.1 allow attackers to execute arbitrary commands on the server, at the server's privilege level. Authentication is not required for exploitation. The other fixed versions are 0.45.4.1, 1.45.4.1, 0.44.7.1, 1.44.7.1, 0.43.7.2, and 1.43.7.2.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-38646.yaml"}
+,
+{"ID":"CVE-2023-39002","Info":{"Name":"OPNsense - Cross-Site Scripting","Severity":"medium","Description":"A cross-site scripting (XSS) vulnerability in the act parameter of system_certmanager.php in OPNsense before 23.7 allows attackers to execute arbitrary web scripts or HTML via a crafted payload.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2023/CVE-2023-39002.yaml"}
 ,
 {"ID":"CVE-2023-39026","Info":{"Name":"FileMage Gateway - Directory Traversal","Severity":"high","Description":"Directory Traversal vulnerability in FileMage Gateway Windows Deployments v.1.10.8 and before allows a remote attacker to obtain sensitive information via a crafted request to the /mgmt/ component.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-39026.yaml"}
 ,
@@ -4438,6 +4442,8 @@
 {"ID":"CVE-2023-6018","Info":{"Name":"Mlflow - Arbitrary File Write","Severity":"critical","Description":"An attacker can overwrite any file on the server hosting MLflow without any authentication.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-6018.yaml"}
 ,
 {"ID":"CVE-2023-6020","Info":{"Name":"Ray Static File - Local File Inclusion","Severity":"high","Description":"LFI in Ray's /static/ directory allows attackers to read any file on the server without authentication.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-6020.yaml"}
+,
+{"ID":"CVE-2023-6021","Info":{"Name":"Ray API - Local File Inclusion","Severity":"high","Description":"LFI in Ray's log API endpoint allows attackers to read any file on the server without authentication.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-6021.yaml"}
 ,
 {"ID":"CVE-2023-6380","Info":{"Name":"OpenCms 14 \u0026 15 - Open Redirect","Severity":"medium","Description":"Open redirect vulnerability has been found in the Open CMS product affecting versions 14 and 15 of the 'Mercury' template\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-6380.yaml"}
 ,
