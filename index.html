@@ -111,7 +111,7 @@
                 console.log(`[KEV] catalog version is ${kev_version}`);
             }).then(() => {
                 kevin_report = get_kevin_report();
-                fill_table();
+                fill_table(kevin_report);
             })
 
             function copyAsJsonToClipboard() {
