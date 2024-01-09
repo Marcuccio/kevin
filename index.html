@@ -295,7 +295,7 @@
 
             function filter_cves_but() {
 
-                cves = cvelist.value.split('\n').map(el => el.trim())
+                let cves = cvelist.value.split('\n').map(el => el.trim())
 
                 Array.from(tbody.rows).forEach(row => {
                     // Get the cell content (assuming the CVE is in the first cell)
