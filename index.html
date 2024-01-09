@@ -232,7 +232,7 @@
 
                 let cves = cvelist.value.split('\n').map(el => el.trim())
 
-                if (cves.length === 0) {
+                if (cves.length === 1 && cves[0]=='') {
                     
                     Array.from(tbody.rows).forEach(row => {
                         row.style.display = '';
