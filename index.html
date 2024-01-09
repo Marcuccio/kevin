@@ -9,7 +9,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+        <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-base.min.js" type="text/javascript"></script>
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
@@ -55,6 +55,10 @@
                 </div>
 
             </div>
+
+            <div class="row">
+                <div id="venn_container"></div>
+            </div>
         </div>
 
         <blockquote class="blockquote text-center" style="margin: 36px;">
@@ -88,8 +92,8 @@
             const tbody   = table.tBodies[0]
             let _clipboard = [];
 
-            let nuc = undefined
-            let itw = undefined
+            let nuc, nuc_count = undefined
+            let itw, itw_count = undefined
             let kev, kev_version, kev_date_released, kev_count = undefined;
 
             let kevin_report = undefined;
@@ -101,9 +105,12 @@
             ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => {
 
                 nuc = resp_nuclei
-                itw = resp_inthewild
-                kev = resp_kev
+                nuc_count = resp_nuclei.length
 
+                itw = resp_inthewild
+                itw_count = resp_inthewild.length
+
+                kev = resp_kev
                 kev_version       = resp_kev.catalogVersion
                 kev_date_released = resp_kev.dateReleased
                 kev_count         = resp_kev.count
@@ -112,6 +119,7 @@
             }).then(() => {
                 kevin_report = get_kevin_report();
                 fill_table(kevin_report);
+                draw_venn()
             })
 
             function copyAsJsonToClipboard() {
@@ -146,39 +154,6 @@
             function find_kev_by_id(objects, id) {
                 return objects.find(obj => obj.cveID === id);
             }
-
-/*             function add_cve_knownledge(report, kev, itw, nuc) {
-                let nuc_cve = cves_from_nuc();
-                let itw_cve = cves_from_itw();
-                let kev_cve = cves_from_kev();
-
-                for (let [key, value] of Object.entries(report)) {
-                    value.id = key;
-                    value.vuln_name  = "";
-                    value.short_desc = "";
-
-                    if (itw_cve.includes(key)) {
-                        value.is_itw = true;
-                    }
-                    if (kev_cve.includes(key)) {
-                        value.is_kev = true;
-
-                        let temp = find_kev_by_id(kev.vulnerabilities, key);
-                        value.vuln_name = temp.vulnerabilityName;
-                        value.short_desc = temp.shortDescription;
-                    }
-                    if (nuc_cve.includes(key)) {
-                        value.is_nuc = true;
-
-                        let temp = find_nuc_by_id(nuc, key);
-                        value.vuln_name = temp.Info.Name;
-                        value.short_desc = temp.Info.Description;
-                    }
-                }
-
-                return report;
-            }
- */
             
             function get_kevin_report() {
                 let kevin_report = {}
@@ -224,48 +199,6 @@
                 return kevin_report;
             }
 
-/*             function run(input) {
-                _clipboard = [];
-                let report = {};
-
-                cvelist.value.split('\n').map(el => el.trim()).forEach(key => {
-                    report[key] = {
-                        "is_kev": false,
-                        "is_itw": false,
-                        "is_nuc": false,
-                    };
-                });
-
-                report = add_cve_knownledge(report, kev, itw, nuc);
-
-                while(tbody.rows.length > 0) {
-                  tbody.deleteRow(-1);
-                }
-
-                Object.entries(report).map(([k,v]) => {
-                    let row = tbody.insertRow()
-                    row.classList.add("align-middle");
-                    row.insertCell().innerHTML = k
-                    row.insertCell().innerHTML = v.vuln_name
-                    row.insertCell().innerHTML = v.short_desc
-
-                    let isKevCell = row.insertCell();
-                    if (v.is_kev) {isKevCell.style.color = "red";}
-                    isKevCell.innerHTML = v.is_kev
-
-                    let isItwCell = row.insertCell();
-                    if (v.is_itw) {isItwCell.style.color = "red";}
-                    isItwCell.innerHTML = v.is_itw
-
-                    let isNucCell = row.insertCell();
-                    if (v.is_nuc) {isNucCell.style.color = "red";}
-                    isNucCell.innerHTML = v.is_nuc
-
-
-                    _clipboard.push(v)
-                })
-            } */
-
             function fill_table(report) {
 
                 Object.entries(report).map(([k,v]) => {
@@ -302,7 +235,7 @@
                     Array.from(tbody.rows).forEach(row => {
                         row.style.display = '';
                     });
-                    
+
                 } else {
 
                     Array.from(tbody.rows).forEach(row => {
@@ -319,6 +252,28 @@
 
             }
 
+            function draw_venn() {
+                var data = [
+                {x: "Kev", value: kev_count},
+                {x: "ITW", value: itw_count},
+                {x: "Nuclei", value: nuc_count},
+                {x: ["Kev", "ITW"], value: kev.filter(x => itw.includes(x)).length},
+                {x: ["Kev", "Nuclei"], value: kev.filter(x => nuc.includes(x)).length},
+                {x: ["ITW", "Nuclei"], value: itw.filter(x => nuc.includes(x)).length}
+            ];
+
+                // create a chart and set the data
+                chart = anychart.venn(data);
+
+                // configure labels of intersections
+                chart.intersections().labels().format("{%x}");
+
+                // set the container id
+                chart.container('venn_container');
+
+                // initiate drawing the chart
+                chart.draw();
+            }
 
             const headerCells = thead.rows[0].cells;
 
