@@ -297,16 +297,25 @@
 
                 let cves = cvelist.value.split('\n').map(el => el.trim())
 
-                Array.from(tbody.rows).forEach(row => {
-                    // Get the cell content (assuming the CVE is in the first cell)
-                    const cellContent = row.cells[0].textContent;
+                if (cves.length === 0) {
+                    
+                    Array.from(tbody.rows).forEach(row => {
+                        row.style.display = '';
+                    });
+                    
+                } else {
 
-                    // Check if the CVE is in the provided array
-                    const isInArray = cves.includes(cellContent);
+                    Array.from(tbody.rows).forEach(row => {
+                        // Get the cell content (assuming the CVE is in the first cell)
+                        const cellContent = row.cells[0].textContent;
 
-                    // Toggle row visibility based on array inclusion
-                    row.style.display = isInArray ? '' : 'none';
-                });
+                        // Check if the CVE is in the provided array
+                        const isInArray = cves.includes(cellContent);
+
+                        // Toggle row visibility based on array inclusion
+                        row.style.display = isInArray ? '' : 'none';
+                    });
+                }
 
             }
 
