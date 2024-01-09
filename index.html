@@ -92,12 +92,13 @@
             let itw = undefined
             let kev, kev_version, kev_date_released, kev_count = undefined;
 
+            let kevin_report = undefined;
+          
             Promise.all([
                 fetch('nuclei.json').then(resp => resp.json()),
                 fetch('kev.json').then(resp => resp.json()),
                 fetch('itw.json').then(resp => resp.json())
-            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) =>
-            {
+            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => {
 
                 nuc = resp_nuclei
                 itw = resp_inthewild
@@ -108,6 +109,9 @@
                 kev_count         = resp_kev.count
 
                 console.log(`[KEV] catalog version is ${kev_version}`);
+            }).then(() => {
+                kevin_report = get_kevin_report();
+                fill_table();
             })
 
             function copyAsJsonToClipboard() {
@@ -120,18 +124,18 @@
                 document.body.removeChild(dummy);
             }
 
-            function cves_from_nuc(nuc) {
+            function cves_from_nuc() {
               let cves = nuc.map(x => x.ID);
               return cves;
             }
 
-            function cves_from_itw(itw) {
+            function cves_from_itw() {
               let cves = itw.map(x => x.id);
               return cves;
             }
 
-            function cves_from_kev(vuln) {
-              let cves = vuln.map(x => x.cveID);
+            function cves_from_kev() {
+              let cves = kev.vulnerabilities.map(x => x.cveID);
               return cves;
             }
 
@@ -143,10 +147,10 @@
                 return objects.find(obj => obj.cveID === id);
             }
 
-            function add_cve_knownledge(report, kev, itw, nuc) {
-                let nuc_cve = cves_from_nuc(nuc);
-                let itw_cve = cves_from_itw(itw);
-                let kev_cve = cves_from_kev(kev.vulnerabilities);
+/*             function add_cve_knownledge(report, kev, itw, nuc) {
+                let nuc_cve = cves_from_nuc();
+                let itw_cve = cves_from_itw();
+                let kev_cve = cves_from_kev();
 
                 for (let [key, value] of Object.entries(report)) {
                     value.id = key;
@@ -174,8 +178,53 @@
 
                 return report;
             }
+ */
+            
+            function get_kevin_report() {
+                let kevin_report = {}
 
-            function run(input) {
+                let nuc_cve = cves_from_nuc();
+                let itw_cve = cves_from_itw();
+                let kev_cve = cves_from_kev();
+                let combinedCVEs = [...nuc_cve, ...itw_cve, ...kev_cve];
+                const uniqueCVEs = new Set(combinedCVEs);
+                uniqueCVEs.forEach(key => {
+
+                    value = {
+                        "id": key,
+                        "vuln_name": "",
+                        "short_desc": "",
+                        "is_kev": false,
+                        "is_itw": false,
+                        "is_nuc": false,
+                    };
+                    
+                    if (itw_cve.includes(key)) {
+                        value.is_itw = true;
+                    }
+                    if (kev_cve.includes(key)) {
+                        value.is_kev = true;
+
+                        let temp = find_kev_by_id(kev.vulnerabilities, key);
+                        value.vuln_name = temp.vulnerabilityName;
+                        value.short_desc = temp.shortDescription;
+                    }
+                    if (nuc_cve.includes(key)) {
+                        value.is_nuc = true;
+
+                        let temp = find_nuc_by_id(nuc, key);
+                        value.vuln_name = temp.Info.Name;
+                        value.short_desc = temp.Info.Description;
+                    }
+
+                    kevin_report[key] = value;
+
+                });
+
+                return kevin_report;
+            }
+
+/*             function run(input) {
                 _clipboard = [];
                 let report = {};
 
@@ -215,7 +264,52 @@
 
                     _clipboard.push(v)
                 })
+            } */
+
+            function fill_table(report) {
+
+                Object.entries(report).map(([k,v]) => {
+                    let row = tbody.insertRow()
+                    row.classList.add("align-middle");
+                    row.insertCell().innerHTML = k
+                    row.insertCell().innerHTML = v.vuln_name
+                    row.insertCell().innerHTML = v.short_desc
+
+                    let isKevCell = row.insertCell();
+                    if (v.is_kev) {isKevCell.style.color = "red";}
+                    isKevCell.innerHTML = v.is_kev
+
+                    let isItwCell = row.insertCell();
+                    if (v.is_itw) {isItwCell.style.color = "red";}
+                    isItwCell.innerHTML = v.is_itw
+
+                    let isNucCell = row.insertCell();
+                    if (v.is_nuc) {isNucCell.style.color = "red";}
+                    isNucCell.innerHTML = v.is_nuc
+
+
+                    _clipboard.push(v)
+                })
+
             }
+
+            function filter_cves_but() {
+
+                cves = cvelist.value.split('\n').map(el => el.trim())
+
+                Array.from(tbody.rows).forEach(row => {
+                    // Get the cell content (assuming the CVE is in the first cell)
+                    const cellContent = row.cells[0].textContent;
+
+                    // Check if the CVE is in the provided array
+                    const isInArray = cves.includes(cellContent);
+
+                    // Toggle row visibility based on array inclusion
+                    row.style.display = isInArray ? '' : 'none';
+                });
+
+            }
+
 
             const headerCells = thead.rows[0].cells;
 
@@ -240,7 +334,8 @@
             }
 
             document.getElementById('copyjson').addEventListener('click', copyAsJsonToClipboard);
-            document.getElementById('checkcve').addEventListener('click', run);
+            document.getElementById('checkcve').addEventListener('click', filter_cves_but);
+
         })()
         </script>
     </body>
