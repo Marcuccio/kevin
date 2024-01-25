@@ -165,29 +165,31 @@
                 let kev_cve = cves_from_kev();
                 let combinedCVEs = [...nuc_cve, ...itw_cve, ...kev_cve];
                 const uniqueCVEs = new Set(combinedCVEs);
+
+
                 uniqueCVEs.forEach(key => {
 
                     let value = {
                         "id": key,
                         "vuln_name": "",
                         "short_desc": "",
-                        "is_kev": false,
-                        "is_itw": false,
-                        "is_nuc": false,
+                        "is_kev": "❌",
+                        "is_itw": "❌",
+                        "is_nuc": "❌",
                     };
                     
                     if (itw_cve.includes(key)) {
-                        value.is_itw = true;
+                        value.is_itw = "✅";
                     }
                     if (kev_cve.includes(key)) {
-                        value.is_kev = true;
+                        value.is_kev = "✅";
 
                         let temp = find_kev_by_id(kev.vulnerabilities, key);
                         value.vuln_name = temp.vulnerabilityName;
                         value.short_desc = temp.shortDescription;
                     }
                     if (nuc_cve.includes(key)) {
-                        value.is_nuc = true;
+                        value.is_nuc = "✅";
 
                         let temp = find_nuc_by_id(nuc, key);
                         value.vuln_name = temp.Info.Name;
@@ -211,15 +213,12 @@
                     row.insertCell().innerHTML = v.short_desc
 
                     let isKevCell = row.insertCell();
-                    if (v.is_kev) {isKevCell.style.color = "red";}
                     isKevCell.innerHTML = v.is_kev
 
                     let isItwCell = row.insertCell();
-                    if (v.is_itw) {isItwCell.style.color = "red";}
                     isItwCell.innerHTML = v.is_itw
 
                     let isNucCell = row.insertCell();
-                    if (v.is_nuc) {isNucCell.style.color = "red";}
                     isNucCell.innerHTML = v.is_nuc
 
 
@@ -241,13 +240,8 @@
                 } else {
 
                     Array.from(tbody.rows).forEach(row => {
-                        // Get the cell content (assuming the CVE is in the first cell)
-                        const cellContent = row.cells[0].textContent;
-
-                        // Check if the CVE is in the provided array
+                        const cellContent = row.cells[0].textContent;                        
                         const isInArray = cves.includes(cellContent);
-
-                        // Toggle row visibility based on array inclusion
                         row.style.display = isInArray ? '' : 'none';
                     });
                 }
