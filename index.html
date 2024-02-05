@@ -229,7 +229,7 @@
 
             function filter_cves_but() {
 
-                let cves = cvelist.value.split('\n').map(el => el.trim())
+                let cves = cvelist.value.split('\n').map(el => el.trim().toUpperCase())
 
                 if (cves.length === 1 && cves[0]=='') {
                     
