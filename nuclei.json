@@ -4295,6 +4295,8 @@
 ,
 {"ID":"CVE-2023-34960","Info":{"Name":"Chamilo Command Injection","Severity":"critical","Description":"A command injection vulnerability in the wsConvertPpt component of Chamilo v1.11.* up to v1.11.18 allows attackers to execute arbitrary commands via a SOAP API call with a crafted PowerPoint name.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-34960.yaml"}
 ,
+{"ID":"CVE-2023-34993","Info":{"Name":"Fortinet FortiWLM Unauthenticated Command Injection Vulnerability","Severity":"critical","Description":"A improper neutralization of special elements used in an os command ('os\ncommand injection') in Fortinet FortiWLM version 8.6.0 through 8.6.5 and\n8.5.0 through 8.5.4 allows attacker to execute unauthorized code or commands\nSuccessful exploitation of this vulnerability could allow an attacker to\nbypass authentication and gain unauthorized access to the affected system.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2023/CVE-2023-34993.yaml"}
+,
 {"ID":"CVE-2023-35078","Info":{"Name":"Ivanti Endpoint Manager Mobile (EPMM) - Authentication Bypass","Severity":"critical","Description":"Ivanti Endpoint Manager Mobile (EPMM), formerly MobileIron Core, through 11.10 allows remote attackers to obtain PII, add an administrative account, and change the configuration because of an authentication bypass, as exploited in the wild in July 2023. A patch is available.","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-35078.yaml"}
 ,
 {"ID":"CVE-2023-35082","Info":{"Name":"MobileIron Core - Remote Unauthenticated API Access","Severity":"critical","Description":"Ivanti Endpoint Manager Mobile (EPMM), formerly MobileIron Core, Since CVE-2023-35082 arises from the same place as CVE-2023-35078, specifically the permissive nature of certain entries in the mifs web application’s security filter chain.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-35082.yaml"}
@@ -4648,6 +4650,8 @@
 {"ID":"CVE-2024-27497","Info":{"Name":"Linksys E2000 1.0.06 position.js Improper Authentication","Severity":"high","Description":"Linksys E2000 Ver.1.0.06 build 1 is vulnerable to authentication bypass via the position.js file.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-27497.yaml"}
 ,
 {"ID":"CVE-2024-27954","Info":{"Name":"WordPress Automatic Plugin \u003c3.92.1 - Arbitrary File Download and SSRF","Severity":"critical","Description":"WordPress Automatic plugin \u003c3.92.1 is vulnerable to unauthenticated Arbitrary File Download and SSRF Located in the downloader.php file, could permit attackers to download any file from a site. Sensitive data, including login credentials and backup files, could fall into the wrong hands. This vulnerability has been patched in version 3.92.1.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-27954.yaml"}
+,
+{"ID":"CVE-2024-29059","Info":{"Name":".NET Framework - Leaking ObjRefs via HTTP .NET Remoting","Severity":"high","Description":".NET Framework Information Disclosure Vulnerability","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2024/CVE-2024-29059.yaml"}
 ,
 {"ID":"CVE-2001-1473","Info":{"Name":"Deprecated SSHv1 Protocol Detection","Severity":"high","Description":"SSHv1 is deprecated and has known cryptographic issues.","Classification":{"CVSSScore":"7.5"}},"file_path":"network/cves/2001/CVE-2001-1473.yaml"}
 ,
