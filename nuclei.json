@@ -4677,6 +4677,8 @@
 ,
 {"ID":"CVE-2024-25735","Info":{"Name":"WyreStorm Apollo VX20 - Information Disclosure","Severity":"high","Description":"An issue was discovered on WyreStorm Apollo VX20 devices before 1.3.58. Remote attackers can discover cleartext credentials for the SoftAP (access point) Router /device/config using an HTTP GET request.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-25735.yaml"}
 ,
+{"ID":"CVE-2024-26331","Info":{"Name":"ReCrystallize Server - Authentication Bypass","Severity":"high","Description":"This vulnerability allows an attacker to bypass authentication in the ReCrystallize Server application by manipulating the 'AdminUsername' cookie. This gives the attacker administrative access to the application's functionality, even when the default password has been changed.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-26331.yaml"}
+,
 {"ID":"CVE-2024-27198","Info":{"Name":"TeamCity \u003c 2023.11.4 - Authentication Bypass","Severity":"critical","Description":"In JetBrains TeamCity before 2023.11.4 authentication bypass allowing to perform admin actions was possible\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-27198.yaml"}
 ,
 {"ID":"CVE-2024-27199","Info":{"Name":"TeamCity \u003c 2023.11.4 - Authentication Bypass","Severity":"high","Description":"In JetBrains TeamCity before 2023.11.4 path traversal allowing to perform limited admin actions was possible\n","Classification":{"CVSSScore":"7.3"}},"file_path":"http/cves/2024/CVE-2024-27199.yaml"}
