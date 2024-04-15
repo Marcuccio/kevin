@@ -4209,7 +4209,7 @@
 ,
 {"ID":"CVE-2023-29439","Info":{"Name":"FooGallery plugin \u003c= 2.2.35 - Cross-Site Scripting","Severity":"medium","Description":"Reflected Cross-Site Scripting (XSS) vulnerability in FooPlugins FooGallery plugin \u003c= 2.2.35 versions.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-29439.yaml"}
 ,
-{"ID":"CVE-2023-29489","Info":{"Name":"cPanel - Cross-Site Scripting","Severity":"medium","Description":"An issue was discovered in cPanel before 11.109.9999.116. Cross Site Scripting can occur on the cpsrvd error page via an invalid webcall ID.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-29489.yaml"}
+{"ID":"CVE-2023-29489","Info":{"Name":"cPanel \u003c 11.109.9999.116 - Cross-Site Scripting","Severity":"medium","Description":"An issue was discovered in cPanel before 11.109.9999.116. Cross Site Scripting can occur on the cpsrvd error page via an invalid webcall ID.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-29489.yaml"}
 ,
 {"ID":"CVE-2023-29622","Info":{"Name":"Purchase Order Management v1.0 - SQL Injection","Severity":"critical","Description":"Purchase Order Management v1.0 was discovered to contain a SQL injection vulnerability via the password parameter at /purchase_order/admin/login.php.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-29622.yaml"}
 ,
