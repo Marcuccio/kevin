@@ -3103,6 +3103,8 @@
 ,
 {"ID":"CVE-2022-0660","Info":{"Name":"Microweber \u003c1.2.11 - Information Disclosure","Severity":"high","Description":"Microweber before 1.2.11 is susceptible to information disclosure. An error message is generated in microweber/microweber which contains sensitive information while viewing comments from load_module:comments#search=. An attacker can possibly obtain sensitive information, modify data, and/or execute unauthorized operations.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2022/CVE-2022-0660.yaml"}
 ,
+{"ID":"CVE-2022-0666","Info":{"Name":"Microweber \u003c 1.2.11 - CRLF Injection","Severity":"high","Description":"CRLF Injection leads to Stack Trace Exposure due to lack of filtering at https://demo.microweber.org/ in Packagist microweber/microweber prior to 1.2.11.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2022/CVE-2022-0666.yaml"}
+,
 {"ID":"CVE-2022-0678","Info":{"Name":"Microweber \u003c1.2.11 - Cross-Site Scripting","Severity":"medium","Description":"Packagist prior to 1.2.11 contains a cross-site scripting vulnerability via microweber/microweber. User can escape the meta tag because the user doesn't escape the double-quote in the $redirectUrl parameter when logging out.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2022/CVE-2022-0678.yaml"}
 ,
 {"ID":"CVE-2022-0679","Info":{"Name":"WordPress Narnoo Distributor \u003c=2.5.1 - Local File Inclusion","Severity":"critical","Description":"WordPress Narnoo Distributor plugin 2.5.1 and prior is susceptible to local file inclusion. The plugin does not validate and sanitize the lib_path parameter before being passed into a call to require() via the narnoo_distributor_lib_request AJAX action, and the content of the file is displayed in the response as JSON data. This can also lead to a remote code execution vulnerability depending on system and configuration.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2022/CVE-2022-0679.yaml"}
@@ -4778,6 +4780,8 @@
 {"ID":"CVE-2024-27198","Info":{"Name":"TeamCity \u003c 2023.11.4 - Authentication Bypass","Severity":"critical","Description":"In JetBrains TeamCity before 2023.11.4 authentication bypass allowing to perform admin actions was possible\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-27198.yaml"}
 ,
 {"ID":"CVE-2024-27199","Info":{"Name":"TeamCity \u003c 2023.11.4 - Authentication Bypass","Severity":"high","Description":"In JetBrains TeamCity before 2023.11.4 path traversal allowing to perform limited admin actions was possible\n","Classification":{"CVSSScore":"7.3"}},"file_path":"http/cves/2024/CVE-2024-27199.yaml"}
+,
+{"ID":"CVE-2024-27348","Info":{"Name":"Apache HugeGraph-Server - Remote Command Execution","Severity":"high","Description":"Apache HugeGraph-Server is an open-source graph database that provides a scalable and high-performance solution for managing and analyzing large-scale graph data. It is commonly used in Java8 and Java11 environments. However, versions prior to 1.3.0 are vulnerable to a remote command execution (RCE) vulnerability in the gremlin component.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-27348.yaml"}
 ,
 {"ID":"CVE-2024-27497","Info":{"Name":"Linksys E2000 1.0.06 position.js Improper Authentication","Severity":"high","Description":"Linksys E2000 Ver.1.0.06 build 1 is vulnerable to authentication bypass via the position.js file.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-27497.yaml"}
 ,
