@@ -1,0 +1,24 @@
+name: Fetch afrog cves
+on:
+  schedule:
+    - cron: '0 0/12 * * *'
+    
+    
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: page
+
+      - name: fetch afrog_cves
+        run: |
+          wget https://github.com/zan8in/afrog/archive/refs/heads/main.zip
+          unzip -l main.zip "afrog-main/pocs/afrog-pocs/CVE/*.yaml" | grep -o 'afrog-main/pocs/afrog-pocs/CVE/[^ ]*' | awk -F '/' '{print $NF}' | sed 's/\.yaml$//' > afrog.txt
+          
+      - name: commit & push
+        run: |
+          git config --global user.name 'Marcuccio'
+          git config --global user.email 'marcuccio.dev@gmail.com'
+          (git add afrog.txt && git commit -m "fetch of afrog cves" && git push) || exit 0
