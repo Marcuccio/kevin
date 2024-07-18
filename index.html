@@ -78,6 +78,7 @@
                         <th>kev</th>
                         <th>itw</th>
                         <th>nuclei</th>
+                        <th>afrog</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -97,14 +98,16 @@
             let nuc, nuc_count = undefined
             let itw, itw_count = undefined
             let kev, kev_version, kev_date_released, kev_count = undefined;
+            let afr, afr_count = undefined
 
             let kevin_report = undefined;
           
             Promise.all([
                 fetch('nuclei.json').then(resp => resp.json()),
                 fetch('kev.json').then(resp => resp.json()),
-                fetch('itw.json').then(resp => resp.json())
-            ]).then(([resp_nuclei, resp_kev, resp_inthewild]) => {
+                fetch('itw.json').then(resp => resp.json()),
+                fetch('afrog.txt').then(resp => resp.text())
+            ]).then(([resp_nuclei, resp_kev, resp_inthewild, resp_afrog]) => {
 
                 nuc = resp_nuclei
                 nuc_count = resp_nuclei.length
@@ -116,6 +119,9 @@
                 kev_version       = resp_kev.catalogVersion
                 kev_date_released = resp_kev.dateReleased
                 kev_count         = resp_kev.count
+
+                afr = resp_afrog.split('\n')
+                afr_count = afr.length
 
                 console.log(`[KEV] catalog version is ${kev_version}`);
             }).then(() => {
@@ -163,7 +169,9 @@
                 let nuc_cve = cves_from_nuc();
                 let itw_cve = cves_from_itw();
                 let kev_cve = cves_from_kev();
-                let combinedCVEs = [...nuc_cve, ...itw_cve, ...kev_cve];
+                let afr_cve = afr;
+                
+                let combinedCVEs = [...nuc_cve, ...itw_cve, ...kev_cve, ...afr_cve];
                 const uniqueCVEs = new Set(combinedCVEs);
 
 
@@ -176,6 +184,7 @@
                         "is_kev": "❌",
                         "is_itw": "❌",
                         "is_nuc": "❌",
+                        "is_afr": "❌",
                     };
                     
                     if (itw_cve.includes(key)) {
@@ -194,6 +203,10 @@
                         let temp = find_nuc_by_id(nuc, key);
                         value.vuln_name = temp.Info.Name;
                         value.short_desc = temp.Info.Description;
+                    }
+
+                    if (afr_cve.includes(key)) {
+                        value.is_afr = "✅";
                     }
 
                     kevin_report[key] = value;
@@ -220,6 +233,9 @@
 
                     let isNucCell = row.insertCell();
                     isNucCell.innerHTML = v.is_nuc
+
+                    let isAfrCell = row.insertCell();
+                    isAfrCell.innerHTML = v.is_afr
 
 
                     _clipboard.push(v)
@@ -253,6 +269,7 @@
                 let nuc_cve = cves_from_nuc();
                 let itw_cve = cves_from_itw();
                 let kev_cve = cves_from_kev();
+                let afr_cve = afr;
                 
                 var data = [
                 {x: "Kev", value: kev_count},
