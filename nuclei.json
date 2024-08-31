@@ -4655,7 +4655,7 @@
 ,
 {"ID":"CVE-2023-47643","Info":{"Name":"SuiteCRM Unauthenticated Graphql Introspection","Severity":"medium","Description":"Graphql Introspection is enabled without authentication, exposing the scheme defining all object types, arguments, and functions.\n","Classification":{"CVSSScore":"5.3"}},"file_path":"http/cves/2023/CVE-2023-47643.yaml"}
 ,
-{"ID":"CVE-2023-48023","Info":{"Name":"Anyscale Ray 2.6.3 and 2.8.0 - Server-Side Request Forgery","Severity":"high","Description":"The Ray Dashboard API is affected by a Server-Side Request Forgery (SSRF) vulnerability in the url parameter of the /log_proxy API endpoint. The API does not perform sufficient input validation within the affected parameter and any HTTP or HTTPS URLs are accepted as valid.\n","Classification":{"CVSSScore":"9.1"}},"file_path":"http/cves/2023/CVE-2023-48023.yaml"}
+{"ID":"CVE-2023-48023","Info":{"Name":"Anyscale Ray 2.6.3 and 2.8.0 - Server-Side Request Forgery","Severity":"critical","Description":"The Ray Dashboard API is affected by a Server-Side Request Forgery (SSRF) vulnerability in the url parameter of the /log_proxy API endpoint. The API does not perform sufficient input validation within the affected parameter and any HTTP or HTTPS URLs are accepted as valid.\n","Classification":{"CVSSScore":"9.1"}},"file_path":"http/cves/2023/CVE-2023-48023.yaml"}
 ,
 {"ID":"CVE-2023-48084","Info":{"Name":"Nagios XI \u003c 5.11.3 - SQL Injection","Severity":"critical","Description":"SQL injection vulnerability in Nagios XI before version 5.11.3 via the bulk modification tool.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-48084.yaml"}
 ,
