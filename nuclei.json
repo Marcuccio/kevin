@@ -4331,6 +4331,8 @@
 ,
 {"ID":"CVE-2023-34020","Info":{"Name":"Uncanny Toolkit for LearnDash - Open Redirection","Severity":"medium","Description":"A vulnerability in the WordPress Uncanny Toolkit for LearnDash Plugin allowed malicious actors to redirect users, posing a potential risk of phishing incidents. The issue has been resolved in version 3.6.4.4, and users are urged to update for security.\n","Classification":{"CVSSScore":"4.7"}},"file_path":"http/cves/2023/CVE-2023-34020.yaml"}
 ,
+{"ID":"CVE-2023-34105","Info":{"Name":"SRS - Command Injection","Severity":"high","Description":"SRS's v5.0.137~v5.0.156, v6.0.18~v6.0.47 api-server server is vulnerable to a drive-by command injection.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-34105.yaml"}
+,
 {"ID":"CVE-2023-34124","Info":{"Name":"SonicWall GMS and Analytics Web Services - Shell Injection","Severity":"critical","Description":"The authentication mechanism in SonicWall GMS and Analytics Web Services had insufficient checks, allowing authentication bypass. This issue affects GMS: 9.3.2-SP1 and earlier versions; Analytics: 2.5.0.4-R7 and earlier versions\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-34124.yaml"}
 ,
 {"ID":"CVE-2023-34192","Info":{"Name":"Zimbra Collaboration Suite (ZCS) v.8.8.15 - Cross-Site Scripting","Severity":"critical","Description":"Cross Site Scripting vulnerability in Zimbra ZCS v.8.8.15 allows a remote authenticated attacker to execute arbitrary code via a crafted script to the /h/autoSaveDraft function.\n","Classification":{"CVSSScore":"9"}},"file_path":"http/cves/2023/CVE-2023-34192.yaml"}
@@ -4654,6 +4656,8 @@
 {"ID":"CVE-2023-47246","Info":{"Name":"SysAid Server - Remote Code Execution","Severity":"critical","Description":"In SysAid On-Premise before 23.3.36, a path traversal vulnerability leads to code execution after an attacker writes a file to the Tomcat webroot, as exploited in the wild in November 2023.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-47246.yaml"}
 ,
 {"ID":"CVE-2023-47643","Info":{"Name":"SuiteCRM Unauthenticated Graphql Introspection","Severity":"medium","Description":"Graphql Introspection is enabled without authentication, exposing the scheme defining all object types, arguments, and functions.\n","Classification":{"CVSSScore":"5.3"}},"file_path":"http/cves/2023/CVE-2023-47643.yaml"}
+,
+{"ID":"CVE-2023-47684","Info":{"Name":"Essential Grid \u003c= 3.1.0 - Cross-Site Scripting","Severity":"medium","Description":"Unauthenticated Reflected Cross-Site Scripting (XSS) vulnerability in ThemePunch OHG Essential Grid plugin \u003c= 3.1.0 versions.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-47684.yaml"}
 ,
 {"ID":"CVE-2023-48023","Info":{"Name":"Anyscale Ray 2.6.3 and 2.8.0 - Server-Side Request Forgery","Severity":"critical","Description":"The Ray Dashboard API is affected by a Server-Side Request Forgery (SSRF) vulnerability in the url parameter of the /log_proxy API endpoint. The API does not perform sufficient input validation within the affected parameter and any HTTP or HTTPS URLs are accepted as valid.\n","Classification":{"CVSSScore":"9.1"}},"file_path":"http/cves/2023/CVE-2023-48023.yaml"}
 ,
