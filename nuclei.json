@@ -23,6 +23,8 @@
 ,
 {"ID":"CVE-2007-0885","Info":{"Name":"Jira Rainbow.Zen - Cross-Site Scripting","Severity":"medium","Description":"Jira Rainbow.Zen contains a cross-site scripting vulnerability via Jira/secure/BrowseProject.jspa which allows remote attackers to inject arbitrary web script or HTML via the id parameter.","Classification":{"CVSSScore":"6.8"}},"file_path":"http/cves/2007/CVE-2007-0885.yaml"}
 ,
+{"ID":"CVE-2007-2449","Info":{"Name":"Apache Tomcat 4.x-7.x - Cross-Site Scripting","Severity":"medium","Description":"Apache Tomcat 4.x through 7.x contains a cross-site scripting vulnerability which an attacker can use to execute arbitrary script in the browser of an unsuspecting user in the context of the affected site.\n","Classification":{"CVSSScore":"7.2"}},"file_path":"http/cves/2007/CVE-2007-2449.yaml"}
+,
 {"ID":"CVE-2007-3010","Info":{"Name":"Alcatel-Lucent OmniPCX - Remote Command Execution","Severity":"critical","Description":"The OmniPCX web interface has a script \"masterCGI\" with a remote command execution vulnerability via the \"user\" parameter.\n","Classification":{"CVSSScore":"10"}},"file_path":"http/cves/2007/CVE-2007-3010.yaml"}
 ,
 {"ID":"CVE-2007-4504","Info":{"Name":"Joomla! RSfiles \u003c=1.0.2 - Local File Inclusion","Severity":"medium","Description":"Joomla! RSfiles 1.0.2 and earlier is susceptible to local file inclusion in index.php in the RSfiles component (com_rsfiles). This could allow remote attackers to arbitrarily read files via a .. (dot dot) in the path parameter in a files.display action.","Classification":{"CVSSScore":"5"}},"file_path":"http/cves/2007/CVE-2007-4504.yaml"}
