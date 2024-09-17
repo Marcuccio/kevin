@@ -4305,6 +4305,8 @@
 ,
 {"ID":"CVE-2023-31548","Info":{"Name":"ChurchCRM v4.5.3 - Cross-Site Scripting","Severity":"medium","Description":"A stored Cross-site scripting (XSS) vulnerability in the FundRaiserEditor.php component of ChurchCRM v4.5.3 allows attackers to execute arbitrary web scripts or HTML via a crafted payload.\n","Classification":{"CVSSScore":"5.4"}},"file_path":"http/cves/2023/CVE-2023-31548.yaml"}
 ,
+{"ID":"CVE-2023-3188","Info":{"Name":"Owncast - Server Side Request Forgery","Severity":"medium","Description":"Server-Side Request Forgery (SSRF) in GitHub repository owncast/owncast prior to 0.1.0.\n","Classification":{"CVSSScore":"6.5"}},"file_path":"http/cves/2023/CVE-2023-3188.yaml"}
+,
 {"ID":"CVE-2023-32068","Info":{"Name":"XWiki - Open Redirect","Severity":"medium","Description":"XWiki Platform is vulnerable to open redirect attacks due to improper validation of the xredirect parameter. This allows an attacker to redirect users to an arbitrary website. The vulnerability is patched in versions 14.10.4 and 15.0.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-32068.yaml"}
 ,
 {"ID":"CVE-2023-32077","Info":{"Name":"Netmaker - Hardcoded DNS Secret Key","Severity":"high","Description":"Netmaker makes networks with WireGuard. Prior to versions 0.17.1 and 0.18.6, hardcoded DNS key usage has been found in Netmaker allowing unauth users to interact with DNS API endpoints.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-32077.yaml"}
@@ -4494,6 +4496,8 @@
 {"ID":"CVE-2023-38992","Info":{"Name":"Jeecg-Boot v3.5.1 - SQL Injection","Severity":"critical","Description":"SQL injection vulnerability via the title parameter at /sys/dict/loadTreeData in jeecg-boot v3.5.1.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-38992.yaml"}
 ,
 {"ID":"CVE-2023-39002","Info":{"Name":"OPNsense - Cross-Site Scripting","Severity":"medium","Description":"A cross-site scripting (XSS) vulnerability in the act parameter of system_certmanager.php in OPNsense before 23.7 allows attackers to execute arbitrary web scripts or HTML via a crafted payload.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-39002.yaml"}
+,
+{"ID":"CVE-2023-39024","Info":{"Name":"Harman Media Suite \u003c= 4.2.0 - Local File Disclosure","Severity":"high","Description":"Harman Media Suite (versions 4.2.0 and below) are vulnerable to possible Local File Disclosure. This allows an unauthenticated user to potentially download attachments and recordings stored within the Media Suite application if anonymous access to the User Portal is enabled.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2023/CVE-2023-39024.yaml"}
 ,
 {"ID":"CVE-2023-39026","Info":{"Name":"FileMage Gateway - Directory Traversal","Severity":"high","Description":"Directory Traversal vulnerability in FileMage Gateway Windows Deployments v.1.10.8 and before allows a remote attacker to obtain sensitive information via a crafted request to the /mgmt/ component.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-39026.yaml"}
 ,
@@ -5039,6 +5043,8 @@
 ,
 {"ID":"CVE-2024-36527","Info":{"Name":"Puppeteer Renderer  - Directory Traversal","Severity":"medium","Description":"puppeteer-renderer v.3.2.0 and before is vulnerable to Directory Traversal. Attackers can exploit the URL parameter using the file protocol to read sensitive information from the server.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-36527.yaml"}
 ,
+{"ID":"CVE-2024-3673","Info":{"Name":"Web Directory Free \u003c 1.7.3 - Local File Inclusion","Severity":"critical","Description":"The Web Directory Free WordPress plugin before 1.7.3 does not validate a parameter before using it in an include(), which could lead to Local File Inclusion issues.\n","Classification":{"CVSSScore":"9.1"}},"file_path":"http/cves/2024/CVE-2024-3673.yaml"}
+,
 {"ID":"CVE-2024-36837","Info":{"Name":"CRMEB v.5.2.2 - SQL Injection","Severity":"high","Description":"SQL Injection vulnerability in CRMEB v.5.2.2 allows a remote attacker to obtain sensitive information via the getProductList function in the ProductController.php file.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-36837.yaml"}
 ,
 {"ID":"CVE-2024-36991","Info":{"Name":"Splunk Enterprise - Local File Inclusion","Severity":"high","Description":"In Splunk Enterprise on Windows versions below 9.2.2, 9.1.5, and 9.0.10, an attacker could perform a path traversal on the /modules/messaging/ endpoint in Splunk Enterprise on Windows. This vulnerability should only affect Splunk Enterprise on Windows.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-36991.yaml"}
@@ -5222,6 +5228,8 @@
 {"ID":"CVE-2024-8181","Info":{"Name":"Flowise \u003c= 1.8.2 Authentication Bypass","Severity":"high","Description":"An Authentication Bypass vulnerability exists in Flowise version 1.8.2. This could allow a remote, unauthenticated attacker to access API endpoints as an administrator and allow them to access restricted functionality.\n","Classification":{"CVSSScore":"7.3"}},"file_path":"http/cves/2024/CVE-2024-8181.yaml"}
 ,
 {"ID":"CVE-2024-8517","Info":{"Name":"SPIP BigUp Plugin - Remote Code Execution","Severity":"critical","Description":"SPIP before 4.3.2, 4.2.16, and 4.1.18 is vulnerable to a command injection issue. A remote and unauthenticated attacker can execute arbitrary operating system commands by sending a crafted multipart file upload HTTP request.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-8517.yaml"}
+,
+{"ID":"CVE-2024-8752","Info":{"Name":"WebIQ 2.15.9 - Directory Traversal","Severity":"high","Description":"The Windows version of WebIQ 2.15.9 is affected by a directory traversal vulnerability that allows remote attackers to read any file on the system.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2024/CVE-2024-8752.yaml"}
 ,
 {"ID":"CVE-2001-1473","Info":{"Name":"Deprecated SSHv1 Protocol Detection","Severity":"high","Description":"SSHv1 is deprecated and has known cryptographic issues.","Classification":{"CVSSScore":"7.5"}},"file_path":"network/cves/2001/CVE-2001-1473.yaml"}
 ,
