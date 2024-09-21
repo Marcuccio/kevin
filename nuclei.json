@@ -4219,6 +4219,8 @@
 ,
 {"ID":"CVE-2023-2780","Info":{"Name":"Mlflow \u003c2.3.1 - Local File Inclusion Bypass","Severity":"critical","Description":"Path Traversal: '\\..\\filename' in GitHub repository mlflow/mlflow prior to 2.3.1.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-2780.yaml"}
 ,
+{"ID":"CVE-2023-27847","Info":{"Name":"PrestaShop xipblog - SQL Injection","Severity":"critical","Description":"In the blog module (xipblog), an anonymous user can perform SQL injection. Even though the module has been patched in version 2.0.1, the version number was not incremented at the time.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-27847.yaml"}
+,
 {"ID":"CVE-2023-27922","Info":{"Name":"Newsletter \u003c 7.6.9 - Cross-Site Scripting","Severity":"medium","Description":"The plugin does not escape generated URLs before outputting them in attributes, leading to Reflected Cross-Site Scripting which could be used against high privilege users such as administrators\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-27922.yaml"}
 ,
 {"ID":"CVE-2023-2796","Info":{"Name":"EventON \u003c= 2.1 - Missing Authorization","Severity":"medium","Description":"The EventON WordPress plugin before 2.1.2 lacks authentication and authorization in its eventon_ics_download ajax action, allowing unauthenticated visitors to access private and password protected Events by guessing their numeric id.\n","Classification":{"CVSSScore":"5.3"}},"file_path":"http/cves/2023/CVE-2023-2796.yaml"}
@@ -4522,6 +4524,8 @@
 {"ID":"CVE-2023-39598","Info":{"Name":"IceWarp Email Client - Cross Site Scripting","Severity":"medium","Description":"Cross Site Scripting vulnerability in IceWarp Corporation WebClient v.10.2.1 allows a remote attacker to execute arbitrary code via a crafted payload to the mid parameter.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-39598.yaml"}
 ,
 {"ID":"CVE-2023-39600","Info":{"Name":"IceWarp 11.4.6.0 - Cross-Site Scripting","Severity":"medium","Description":"IceWarp 11.4.6.0 was discovered to contain a cross-site scripting (XSS) vulnerability via the color parameter.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-39600.yaml"}
+,
+{"ID":"CVE-2023-39650","Info":{"Name":"PrestaShop Theme Volty CMS Blog - SQL Injection","Severity":"critical","Description":"In the module 'Theme Volty CMS Blog' (tvcmsblog) up to versions 4.0.1 from Theme Volty for PrestaShop, a guest can perform SQL injection in affected versions.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-39650.yaml"}
 ,
 {"ID":"CVE-2023-39676","Info":{"Name":"PrestaShop fieldpopupnewsletter Module - Cross Site Scripting","Severity":"medium","Description":"Fieldpopupnewsletter Prestashop Module v1.0.0 was discovered to contain a reflected cross-site scripting (XSS) vulnerability via the callback parameter at ajax.php.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-39676.yaml"}
 ,
@@ -5051,6 +5055,8 @@
 ,
 {"ID":"CVE-2024-36527","Info":{"Name":"Puppeteer Renderer  - Directory Traversal","Severity":"medium","Description":"puppeteer-renderer v.3.2.0 and before is vulnerable to Directory Traversal. Attackers can exploit the URL parameter using the file protocol to read sensitive information from the server.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-36527.yaml"}
 ,
+{"ID":"CVE-2024-36683","Info":{"Name":"PrestaShop productsalert - SQL Injection","Severity":"critical","Description":"In the module 'Products Alert' (productsalert) up to version 1.7.4 from Smart Modules for PrestaShop, a guest can perform SQL injection in affected versions.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-36683.yaml"}
+,
 {"ID":"CVE-2024-3673","Info":{"Name":"Web Directory Free \u003c 1.7.3 - Local File Inclusion","Severity":"critical","Description":"The Web Directory Free WordPress plugin before 1.7.3 does not validate a parameter before using it in an include(), which could lead to Local File Inclusion issues.\n","Classification":{"CVSSScore":"9.1"}},"file_path":"http/cves/2024/CVE-2024-3673.yaml"}
 ,
 {"ID":"CVE-2024-36837","Info":{"Name":"CRMEB v.5.2.2 - SQL Injection","Severity":"high","Description":"SQL Injection vulnerability in CRMEB v.5.2.2 allows a remote attacker to obtain sensitive information via the getProductList function in the ProductController.php file.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-36837.yaml"}
@@ -5116,6 +5122,8 @@
 {"ID":"CVE-2024-4348","Info":{"Name":"osCommerce v4.0 - Cross-site Scripting","Severity":"medium","Description":"A vulnerability, which was classified as problematic, was found in osCommerce 4. Affected is an unknown function of the file /catalog/all-products. The manipulation of the argument cat leads to cross site scripting. It is possible to launch the attack remotely.\n","Classification":{"CVSSScore":"4.3"}},"file_path":"http/cves/2024/CVE-2024-4348.yaml"}
 ,
 {"ID":"CVE-2024-4358","Info":{"Name":"Progress Telerik Report Server - Authentication Bypass","Severity":"critical","Description":"In Progress Telerik Report Server, version 2024 Q1 (10.0.24.305) or earlier, on IIS, an unauthenticated attacker can gain access to Telerik Report Server restricted functionality via an authentication bypass vulnerability.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-4358.yaml"}
+,
+{"ID":"CVE-2024-44000","Info":{"Name":"LiteSpeed Cache \u003c= 6.4.1 - Sensitive Information Exposure","Severity":"high","Description":"The LiteSpeed Cache plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 6.4.1 through the debug.log file that is publicly exposed. This makes it possible for unauthenticated attackers to view potentially sensitive information contained in the exposed log file. The log file may contain user cookies making it possible for an attacker to log in with any session that is actively valid and exposed in the log file. Note: the debug feature must be enabled for this to be a concern and this feature is disabled by default.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2024/CVE-2024-44000.yaml"}
 ,
 {"ID":"CVE-2024-4434","Info":{"Name":"LearnPress WordPress LMS Plugin \u003c= 4.2.6.5 - SQL Injection","Severity":"critical","Description":"The LearnPress WordPress LMS Plugin plugin for WordPress is vulnerable to time-based SQL Injection via the ‘term_id’ parameter in versions up to, and including, 4.2.6.5 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-4434.yaml"}
 ,
