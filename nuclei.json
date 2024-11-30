@@ -1913,6 +1913,8 @@
 ,
 {"ID":"CVE-2020-24701","Info":{"Name":"OX Appsuite - Cross-Site Scripting","Severity":"medium","Description":"OX App Suite through 7.10.4 allows XSS via the app loading mechanism (the PATH_INFO to the /appsuite URI).\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2020/CVE-2020-24701.yaml"}
 ,
+{"ID":"CVE-2020-24881","Info":{"Name":"OsTicket \u003c 1.14.3 - Server Side Request Forgery","Severity":"critical","Description":"SSRF vulnerability exists in osTicket before 1.14.3, allowing an attacker to add malicious files to the server or perform port scanning.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2020/CVE-2020-24881.yaml"}
+,
 {"ID":"CVE-2020-24902","Info":{"Name":"Quixplorer \u003c=2.4.1 - Cross-Site Scripting","Severity":"medium","Description":"Quixplorer through 2.4.1 contains a cross-site scripting vulnerability. An attacker can inject arbitrary script in the browser of an unsuspecting user in the context of the affected site, which can allow the attacker to steal cookie-based authentication credentials and launch other attacks.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2020/CVE-2020-24902.yaml"}
 ,
 {"ID":"CVE-2020-24903","Info":{"Name":"Cute Editor for ASP.NET 6.4 - Cross-Site Scripting","Severity":"medium","Description":"Cute Editor for ASP.NET 6.4 contains a cross-site scripting vulnerability. An attacker can inject arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2020/CVE-2020-24903.yaml"}
