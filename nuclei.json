@@ -4549,6 +4549,8 @@
 ,
 {"ID":"CVE-2023-37580","Info":{"Name":"Zimbra Collaboration Suite (ZCS) v.8.8.15 - Cross-Site Scripting","Severity":"medium","Description":"Zimbra Collaboration (ZCS) 8 before 8.8.15 Patch 41 allows XSS in the Zimbra Classic Web Client.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-37580.yaml"}
 ,
+{"ID":"CVE-2023-37599","Info":{"Name":"Issabel PBX 4.0.0-6 - Directory Listing","Severity":"high","Description":"An issue in issabel-pbx v.4.0.0-6 allows a remote attacker to obtain sensitive information via the modules directory\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-37599.yaml"}
+,
 {"ID":"CVE-2023-37629","Info":{"Name":"Online Piggery Management System v1.0 - Unauthenticated File Upload","Severity":"critical","Description":"Online Piggery Management System 1.0 is vulnerable to File Upload. An unauthenticated user can upload a php file by sending a POST request to add-pig.php.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-37629.yaml"}
 ,
 {"ID":"CVE-2023-37645","Info":{"Name":"EyouCms v1.6.3 - Information Disclosure","Severity":"medium","Description":"EyouCms v1.6.3 was discovered to contain an information disclosure vulnerability via the component /custom_model_path/recruit.filelist.txt.\n","Classification":{"CVSSScore":"5.3"}},"file_path":"http/cves/2023/CVE-2023-37645.yaml"}
