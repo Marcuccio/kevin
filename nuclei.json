@@ -4277,7 +4277,7 @@
 ,
 {"ID":"CVE-2023-26347","Info":{"Name":"Adobe Coldfusion - Authentication Bypass","Severity":"high","Description":"Adobe ColdFusion versions 2023.5 (and earlier) and 2021.11 (and earlier) are affected by an Improper Access Control vulnerability that could result in a Security feature bypass. An unauthenticated attacker could leverage this vulnerability to access the administration CFM and CFC endpoints. Exploitation of this issue does not require user interaction.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2023/CVE-2023-26347.yaml"}
 ,
-{"ID":"CVE-2023-26360","Info":{"Name":"Unauthenticated File Read Adobe ColdFusion","Severity":"high","Description":"Unauthenticated Arbitrary File Read vulnerability due to deserialization of untrusted data in Adobe ColdFusion. The vulnerability affects ColdFusion 2021 Update 5 and earlier as well as ColdFusion 2018 Update 15 and earlier\n","Classification":{"CVSSScore":"8.6"}},"file_path":"http/cves/2023/CVE-2023-26360.yaml"}
+{"ID":"CVE-2023-26360","Info":{"Name":"Adobe ColdFusion - Local File Read","Severity":"high","Description":"Unauthenticated Arbitrary File Read vulnerability due to deserialization of untrusted data in Adobe ColdFusion. The vulnerability affects ColdFusion 2021 Update 5 and earlier as well as ColdFusion 2018 Update 15 and earlier\n","Classification":{"CVSSScore":"8.6"}},"file_path":"http/cves/2023/CVE-2023-26360.yaml"}
 ,
 {"ID":"CVE-2023-26469","Info":{"Name":"Jorani 1.0.0 - Remote Code Execution","Severity":"critical","Description":"Jorani 1.0.0, an attacker could leverage path traversal to access files and execute code on the server.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-26469.yaml"}
 ,
