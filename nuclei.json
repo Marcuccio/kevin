@@ -5435,7 +5435,7 @@
 ,
 {"ID":"CVE-2024-45622","Info":{"Name":"ASIS - SQL Injection Authentication Bypass","Severity":"critical","Description":"ASIS (aka Aplikasi Sistem Sekolah using CodeIgniter 3) 3.0.0 through 3.2.0 allows index.php username SQL injection for Authentication Bypass.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-45622.yaml"}
 ,
-{"ID":"CVE-2024-4577","Info":{"Name":"PHP CGI - Argument Injection","Severity":"critical","Description":"PHP CGI - Argument Injection (CVE-2024-4577) is a critical argument injection flaw in PHP.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-4577.yaml"}
+{"ID":"CVE-2024-4577","Info":{"Name":"PHP CGI - Argument Injection","Severity":"critical","Description":"PHP CGI - Argument Injection (CVE-2024-4577) is a critical argument injection flaw in PHP.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-4577.yaml"}
 ,
 {"ID":"CVE-2024-46310","Info":{"Name":"FXServer \u003c v9601 - Information Exposure","Severity":"medium","Description":"Incorrect Access Control in FXServer version's v9601 and prior, for CFX.re FiveM, allows unauthenticated users to modify and read userdata via exposed api endpoint.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-46310.yaml"}
 ,
