@@ -5727,6 +5727,8 @@
 ,
 {"ID":"CVE-2025-0868","Info":{"Name":"DocsGPT - Unauthenticated Remote Code Execution","Severity":"critical","Description":"A vulnerability, that could result in Remote Code Execution (RCE), has been found in DocsGPT. Due to improper parsing of JSON data using eval() an unauthorized attacker could send arbitrary Python code to be executed via /api/remote endpoint.This issue affects DocsGPT- from 0.8.1 through 0.12.0.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2025/CVE-2025-0868.yaml"}
 ,
+{"ID":"CVE-2025-1025","Info":{"Name":"Cockpit \u003c 2.4.1 - Arbitrary File Upload","Severity":"high","Description":"Versions of the package cockpit-hq/cockpit before 2.4.1 are vulnerable to Arbitrary File Upload where an attacker can use different extensions to bypass the upload filter.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2025/CVE-2025-1025.yaml"}
+,
 {"ID":"CVE-2025-1035","Info":{"Name":"KLog Server - Path Traversal","Severity":"medium","Description":"Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Komtera Technolgies KLog Server allows Manipulating Web Input to File System Calls.This issue affects KLog Server: before 3.1.1.\n","Classification":{"CVSSScore":"5.7"}},"file_path":"http/cves/2025/CVE-2025-1035.yaml"}
 ,
 {"ID":"CVE-2025-22952","Info":{"Name":"Elestio Memos \u003c= v0.24.0 - Server-Side Request Forgery","Severity":"critical","Description":"elestio memos v0.23.0 is vulnerable to Server-Side Request Forgery (SSRF) due to insufficient validation of user-supplied URLs, which can be exploited to perform SSRF attacks.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2025/CVE-2025-22952.yaml"}
