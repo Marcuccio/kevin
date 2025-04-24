@@ -5677,6 +5677,8 @@
 ,
 {"ID":"CVE-2024-6205","Info":{"Name":"PayPlus Payment Gateway \u003c 6.6.9 - SQL Injection","Severity":"critical","Description":"The PayPlus Payment Gateway WordPress plugin before 6.6.9 does not properly sanitise and escape a parameter before using it in a SQL statement via a WooCommerce API route available to unauthenticated users, leading to an SQL injection vulnerability.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2024/CVE-2024-6205.yaml"}
 ,
+{"ID":"CVE-2024-6235","Info":{"Name":"NetScaler Console - Sensitive Information Disclosure","Severity":"critical","Description":"Sensitive information disclosure in NetScaler Console\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-6235.yaml"}
+,
 {"ID":"CVE-2024-6289","Info":{"Name":"WPS Hide Login \u003c 1.9.16.4 - Hidden Login Page Disclosure","Severity":"medium","Description":"The WPS Hide Login WordPress plugin before 1.9.16.4 does not prevent redirects to the login page via the auth_redirect WordPress function, allowing an unauthenticated visitor to access the hidden login page.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-6289.yaml"}
 ,
 {"ID":"CVE-2024-6366","Info":{"Name":"User Profile Builder \u003c 3.11.8 - File Upload","Severity":"high","Description":"The User Profile Builder WordPress plugin before 3.11.8 does not have proper authorisation, allowing unauthenticated users to upload media files via the async upload functionality of WP.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2024/CVE-2024-6366.yaml"}
