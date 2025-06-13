@@ -1045,6 +1045,8 @@
 ,
 {"ID":"CVE-2018-10956","Info":{"Name":"IPConfigure Orchid Core VMS 2.0.5 - Local File Inclusion","Severity":"high","Description":"IPConfigure Orchid Core VMS 2.0.5 is susceptible to local file inclusion.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2018/CVE-2018-10956.yaml"}
 ,
+{"ID":"CVE-2018-11133","Info":{"Name":"Quest KACE SMA /common/run_cross_report.php 'fmt' XSS","Severity":"medium","Description":"The 'fmt' parameter of the '/common/run_cross_report.php' script in the the Quest KACE System Management Appliance 8.0.318 is vulnerable to cross-site scripting.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2018/CVE-2018-11133.yaml"}
+,
 {"ID":"CVE-2018-11222","Info":{"Name":"Pandora FMS \u003c=7.0NG.722 - Remote Code Execution","Severity":"high","Description":"Pandora FMS versions \u003c=7.0NG.722 are vulnerable to unauthenticated remote code execution by chaining an unrestricted file upload (CVE-2018-11221) and a local file inclusion (CVE-2018-11222). An attacker can upload a malicious PHP file as a plugin and execute it via LFI, leading to full compromise of the server.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2018/CVE-2018-11222.yaml"}
 ,
 {"ID":"CVE-2018-11227","Info":{"Name":"Monstra CMS \u003c=3.0.4 - Cross-Site Scripting","Severity":"medium","Description":"Monstra CMS 3.0.4 and earlier contains a cross-site scripting vulnerability via index.php.  An attacker can inject arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2018/CVE-2018-11227.yaml"}
