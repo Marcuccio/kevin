@@ -6227,6 +6227,8 @@
 ,
 {"ID":"CVE-2025-5569","Info":{"Name":"IdeaCMS \u003c= 1.7 - SQL Injection","Severity":"critical","Description":"IdeaCMS up to 1.7 is vulnerable to SQL injection via the field parameter in article and product query interfaces. This template uses a time-based payload to safely detect the vulnerability.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2025/CVE-2025-5569.yaml"}
 ,
+{"ID":"CVE-2025-5777","Info":{"Name":"Citrix NetScaler Memory Disclosure - CitrixBleed 2","Severity":"critical","Description":"Insufficient input validation leading to memory overread on the NetScaler Management Interface NetScaler ADC and NetScaler Gateway\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2025/CVE-2025-5777.yaml"}
+,
 {"ID":"CVE-2001-1473","Info":{"Name":"Deprecated SSHv1 Protocol Detection","Severity":"high","Description":"SSHv1 is deprecated and has known cryptographic issues.","Classification":{"CVSSScore":"7.5"}},"file_path":"network/cves/2001/CVE-2001-1473.yaml"}
 ,
 {"ID":"CVE-2004-2687","Info":{"Name":"Distccd v1 - Remote Code Execution","Severity":"high","Description":"distcc 2.x, as used in XCode 1.5 and others, when not configured to restrict access to the server port, allows remote attackers to execute arbitrary commands via compilation jobs, which are executed by the server without authorization checks.\n","Classification":{"CVSSScore":"9.3"}},"file_path":"network/cves/2004/CVE-2004-2687.yaml"}
