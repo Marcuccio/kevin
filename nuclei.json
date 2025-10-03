@@ -6371,6 +6371,8 @@
 ,
 {"ID":"CVE-2025-27218","Info":{"Name":"Sitecore Experience Manager (XM)/Experience Platform (XP) 10.4 - Insecure Deserialization","Severity":"medium","Description":"Sitecore Experience Manager (XM) and Experience Platform (XP) 10.4 before KB1002844 allow remote code execution through insecure deserialization.\n","Classification":{"CVSSScore":"5.3"}},"file_path":"http/cves/2025/CVE-2025-27218.yaml"}
 ,
+{"ID":"CVE-2025-27222","Info":{"Name":"TRUfusion Enterprise \u003c= 7.10.4.0 - Path Traversal","Severity":"critical","Description":"Pre-Auth Path Traversal Allowing to Leak Local server files disclosing sensitive clear-text passwords.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2025/CVE-2025-27222.yaml"}
+,
 {"ID":"CVE-2025-27223","Info":{"Name":"TRUfusion Enterprise \u003c= 7.10.4.0 - Authentication Bypass","Severity":"critical","Description":"Hard-Coded Cryptographic key allowing to forge session cookies that can be used to entirely bypass authentication\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2025/CVE-2025-27223.yaml"}
 ,
 {"ID":"CVE-2025-27225","Info":{"Name":"TRUfusion Enterprise \u003c= 7.10.4.0 - Admin Contact Portal","Severity":"high","Description":"TRUfusion Enterprise versions 7.10.4.0 and earlier contained a vulnerability that allowed unauthenticated access to the Internal Admin Contact Page, resulting in the disclosure of PII (including partner and contact names).\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2025/CVE-2025-27225.yaml"}
