@@ -2015,6 +2015,8 @@
 ,
 {"ID":"CVE-2020-21998","Info":{"Name":"HomeAutomation 3.3.2 - Open Redirect","Severity":"medium","Description":"HomeAutomation 3.3.2 contains a redirect vulnerability caused by improper verification of the 'redirect' GET parameter in 'api.php', letting attackers redirect users to arbitrary websites, exploit requires user interaction with a crafted link.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2020/CVE-2020-21998.yaml"}
 ,
+{"ID":"CVE-2020-22165","Info":{"Name":"PHPGurukul Hospital Management System 4.0 - SQL Injection","Severity":"high","Description":"PHPGurukul Hospital Management System in PHP v4.0 has a SQL injection vulnerability in \\hms\\user-login.php. Remote unauthenticated users can exploit the vulnerability to obtain sensitive database information.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2020/CVE-2020-22165.yaml"}
+,
 {"ID":"CVE-2020-22208","Info":{"Name":"74cms - ajax_street.php 'x' SQL Injection","Severity":"critical","Description":"SQL Injection in 74cms 3.2.0 via the x parameter to plus/ajax_street.php.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2020/CVE-2020-22208.yaml"}
 ,
 {"ID":"CVE-2020-22209","Info":{"Name":"74cms - ajax_common.php SQL Injection","Severity":"critical","Description":"SQL Injection in 74cms 3.2.0 via the query parameter to plus/ajax_common.php.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2020/CVE-2020-22209.yaml"}
