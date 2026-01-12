@@ -4993,7 +4993,7 @@
 ,
 {"ID":"CVE-2023-30256","Info":{"Name":"Webkul QloApps 1.5.2 - Cross-site Scripting","Severity":"medium","Description":"Cross Site Scripting vulnerability found in Webkil QloApps v.1.5.2 allows a remote attacker to obtain sensitive information via the back and email_create parameters in the AuthController.php file.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2023/CVE-2023-30256.yaml"}
 ,
-{"ID":"CVE-2023-30258","Info":{"Name":"MagnusBilling - Unauthenticated Remote Code Execution","Severity":"critical","Description":"Command Injection vulnerability in MagnusSolution magnusbilling 6.x and 7.x allows remote attackers to run arbitrary commands via unauthenticated HTTP request.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-30258.yaml"}
+{"ID":"CVE-2023-30258","Info":{"Name":"MagnusBilling - Remote Code Execution","Severity":"critical","Description":"Command Injection vulnerability in MagnusSolution magnusbilling 6.x and 7.x allows remote attackers to run arbitrary commands via unauthenticated HTTP request.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-30258.yaml"}
 ,
 {"ID":"CVE-2023-30534","Info":{"Name":"Cacti \u003c 1.2.25 Insecure Deserialization","Severity":"medium","Description":"Cacti is an open source operational monitoring and fault management framework. There are two instances of insecure deserialization in Cacti version 1.2.24.\n","Classification":{"CVSSScore":"4.3"}},"file_path":"http/cves/2023/CVE-2023-30534.yaml"}
 ,
@@ -7020,6 +7020,8 @@
 {"ID":"CVE-2025-4632","Info":{"Name":"Samsung MagicINFO 9 Server - File Upload \u0026 Remote Code Execution","Severity":"critical","Description":"Improper limitation of a pathname to a restricted directory vulnerability in Samsung MagicINFO 9 Server version before 21.1052 allows attackers to write arbitrary file as system authority.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2025/CVE-2025-4632.yaml"}
 ,
 {"ID":"CVE-2025-46349","Info":{"Name":"YesWiki Reflected XSS via File Upload","Severity":"high","Description":"YesWiki is a wiki system written in PHP. Prior to version 4.5.4, YesWiki is vulnerable to reflected XSS in the file upload form. This vulnerability allows any malicious unauthenticated user to create a link that can be clicked on by the victim to perform arbitrary actions. This issue has been patched in version 4.5.4.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2025/CVE-2025-46349.yaml"}
+,
+{"ID":"CVE-2025-46550","Info":{"Name":"YesWiki \u003c 4.5.4 - Cross-Site Scripting","Severity":"medium","Description":"YesWiki \u003c 4.5.4 contains a reflected cross-site scripting caused by unsanitized `idformulaire` parameter in `/?BazaR` endpoint, letting attackers steal cookies and hijack sessions, exploit requires user to click malicious link.\n","Classification":{"CVSSScore":"5.3"}},"file_path":"http/cves/2025/CVE-2025-46550.yaml"}
 ,
 {"ID":"CVE-2025-46554","Info":{"Name":"XWiki REST API - Attachments Disclosure","Severity":"high","Description":"A vulnerability in XWiki's REST API allows unauthenticated users to access attachments list and metadata through the attachments endpoint. This could lead to disclosure of sensitive information stored in attachments metadata.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2025/CVE-2025-46554.yaml"}
 ,
