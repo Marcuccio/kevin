@@ -6975,7 +6975,7 @@
 ,
 {"ID":"CVE-2025-36604","Info":{"Name":"Dell UnityVSA \u003c 5.5 - Remote Command Injection","Severity":"critical","Description":"Dell Unity, version(s) 5.5 and prior, contains an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2025/CVE-2025-36604.yaml"}
 ,
-{"ID":"CVE-2025-37164","Info":{"Name":"HPE OneView - Remote Code Execution","Severity":"critical","Description":"HPE OneView contains a remote code execution vulnerability, letting remote attackers execute arbitrary code, exploit requires unspecified conditions.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2025/CVE-2025-37164.yaml"}
+{"ID":"CVE-2025-37164","Info":{"Name":"HPE OneView - Remote Code Execution","Severity":"critical","Description":"HPE OneView contains a remote code execution vulnerability, letting remote attackers execute arbitrary code.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2025/CVE-2025-37164.yaml"}
 ,
 {"ID":"CVE-2025-4008","Info":{"Name":"MeteoBridge \u003c= 6.1 - Remote Code Execution","Severity":"high","Description":"The Meteobridge web interface let meteobridge administrator manage their weather station data collection and administer their meteobridge system through a web application written in CGI shell scripts and C.This web interface exposes an endpoint that is vulnerable to command injection.Remote unauthenticated attackers can gain arbitrary command execution with elevated privileges ( root ) on affected devices.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2025/CVE-2025-4008.yaml"}
 ,
