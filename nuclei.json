@@ -1541,6 +1541,8 @@
 ,
 {"ID":"CVE-2019-14205","Info":{"Name":"WordPress Nevma Adaptive Images \u003c0.6.67 - Local File Inclusion","Severity":"high","Description":"WordPress Nevma Adaptive Images plugin before 0.6.67 allows remote attackers to retrieve arbitrary files via the $REQUEST['adaptive-images-settings']['source_file'] parameter in adaptive-images-script.php.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2019/CVE-2019-14205.yaml"}
 ,
+{"ID":"CVE-2019-14206","Info":{"Name":"Nevma Adaptive Images - Arbitrary File Deletion","Severity":"high","Description":"Nevma Adaptive Images plugin before 0.6.67 for WordPress contains an arbitrary file deletion caused by unsanitized input in adaptive-images-script.php, letting remote attackers delete arbitrary files, exploit requires sending specific request parameters.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2019/CVE-2019-14206.yaml"}
+,
 {"ID":"CVE-2019-14223","Info":{"Name":"Alfresco Share - Open Redirect","Severity":"medium","Description":"Alfresco Share before 5.2.6, 6.0.N and 6.1.N contains an open redirect vulnerability via a crafted POST request. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2019/CVE-2019-14223.yaml"}
 ,
 {"ID":"CVE-2019-14251","Info":{"Name":"T24 Web Server - Local File Inclusion","Severity":"high","Description":"T24 web server is vulnerable to unauthenticated local file inclusion that permits an attacker to exfiltrate data directly from server.","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2019/CVE-2019-14251.yaml"}
@@ -5567,6 +5569,8 @@
 ,
 {"ID":"CVE-2023-52085","Info":{"Name":"Winter CMS Local File Inclusion - (LFI)","Severity":"medium","Description":"Winter is a free, open-source content management system. Users with access to backend forms that include a ColorPicker FormWidget can provide a value that would then be included without further processing in the compilation of custom stylesheets via LESS. This had the potential to lead to a Local File Inclusion vulnerability. This issue has been patched in v1.2.4.\n","Classification":{"CVSSScore":"5.4"}},"file_path":"http/cves/2023/CVE-2023-52085.yaml"}
 ,
+{"ID":"CVE-2023-52163","Info":{"Name":"Digiever DS-2105 Pro - Command Injection","Severity":"high","Description":"Digiever DS-2105 Pro 3.1.0.71-11 contains a command injection caused by unsanitized input in time_tzsetup.cgi, letting attackers execute arbitrary commands remotely, exploit requires no authentication.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2023/CVE-2023-52163.yaml"}
+,
 {"ID":"CVE-2023-5222","Info":{"Name":"Viessmann Vitogate 300 - Hardcoded Password","Severity":"critical","Description":"A critical vulnerability in Viessmann Vitogate 300 up to 2.1.3.0 allows attackers to authenticate using hardcoded credentials in the Web Management Interface.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2023/CVE-2023-5222.yaml"}
 ,
 {"ID":"CVE-2023-52251","Info":{"Name":"Kafka UI 0.7.1 Command Injection","Severity":"high","Description":"An issue discovered in provectus kafka-ui 0.4.0 through 0.7.1 allows remote attackers to execute arbitrary code via the q parameter of /api/clusters/local/topics/{topic}/messages.\n","Classification":{"CVSSScore":"8.8"}},"file_path":"http/cves/2023/CVE-2023-52251.yaml"}
@@ -5986,6 +5990,8 @@
 {"ID":"CVE-2024-29030","Info":{"Name":"Memos 0.13.2 - Server-Side Request Forgery","Severity":"medium","Description":"An SSRF vulnerability exists at the `/api/resource` that allows authenticated users to enumerate the internal network.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2024/CVE-2024-29030.yaml"}
 ,
 {"ID":"CVE-2024-29059","Info":{"Name":".NET Framework - Leaking ObjRefs via HTTP .NET Remoting","Severity":"high","Description":".NET Framework Information Disclosure Vulnerability","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2024/CVE-2024-29059.yaml"}
+,
+{"ID":"CVE-2024-29137","Info":{"Name":"WordPress Tourfic Plugin \u003c= 2.11.7 - Cross-Site Scripting","Severity":"high","Description":"The Tourfic plugin for WordPress is vulnerable to Reflected Cross-Site Scripting (XSS) in versions up to and including 2.11.7 due to insufficient input sanitization and output escaping in the 'place' parameter.\n","Classification":{"CVSSScore":"7.1"}},"file_path":"http/cves/2024/CVE-2024-29137.yaml"}
 ,
 {"ID":"CVE-2024-29138","Info":{"Name":"WordPress Restrict User Access \u003c= 2.5 - Cross-Site Scripting","Severity":"medium","Description":"WordPress Restrict User Access – Membership Plugin with Force versions before 2.6 is vulnerable to Reflected Cross-Site Scripting via the '_rua_section' parameter in the admin level edit page.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2024/CVE-2024-29138.yaml"}
 ,
@@ -6999,6 +7005,8 @@
 ,
 {"ID":"CVE-2025-41646","Info":{"Name":"RevPi Webstatus \u003c= v2.4.5 - Authentication Bypass","Severity":"critical","Description":"An unauthorized remote attacker can bypass the authentication of the affected software package by misusing an incorrect type conversion. This leads to full compromise of the device\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2025/CVE-2025-41646.yaml"}
 ,
+{"ID":"CVE-2025-4210","Info":{"Name":"Casdoor - Authorization Bypass","Severity":"high","Description":"Casdoor up to 1.811.0 contains an authorization bypass caused by manipulation in HandleScim function in controllers/scim.go, letting remote attackers bypass authorization, exploit requires remote access.\n","Classification":{"CVSSScore":"7.3"}},"file_path":"http/cves/2025/CVE-2025-4210.yaml"}
+,
 {"ID":"CVE-2025-4302","Info":{"Name":"Stop User Enumeration WordPress plugin - Authentication Bypass","Severity":"medium","Description":"Stop User Enumeration WordPress plugin \u003c 1.7.3 contains an authentication bypass caused by URL-encoding the REST API path /wp-json/wp/v2/users/, letting attackers bypass user enumeration restrictions, exploit requires crafted URL encoding.\n","Classification":{"CVSSScore":"5.3"}},"file_path":"http/cves/2025/CVE-2025-4302.yaml"}
 ,
 {"ID":"CVE-2025-4322","Info":{"Name":"Motors \u003c= 5.6.67 - Unauthenticated Privilege Escalation via Password Update/Account Takeover","Severity":"critical","Description":"The Motors theme for WordPress is vulnerable to privilege escalation via account takeover in all versions up to, and including, 5.6.67. This is due to the theme not properly validating a user's identity prior to updating their password. This makes it possible for unauthenticated attackers to change arbitrary user passwords, including those of administrators, and leverage that to gain access to their account.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2025/CVE-2025-4322.yaml"}
@@ -7028,6 +7036,8 @@
 {"ID":"CVE-2025-4632","Info":{"Name":"Samsung MagicINFO 9 Server - File Upload \u0026 Remote Code Execution","Severity":"critical","Description":"Improper limitation of a pathname to a restricted directory vulnerability in Samsung MagicINFO 9 Server version before 21.1052 allows attackers to write arbitrary file as system authority.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2025/CVE-2025-4632.yaml"}
 ,
 {"ID":"CVE-2025-46349","Info":{"Name":"YesWiki Reflected XSS via File Upload","Severity":"high","Description":"YesWiki is a wiki system written in PHP. Prior to version 4.5.4, YesWiki is vulnerable to reflected XSS in the file upload form. This vulnerability allows any malicious unauthenticated user to create a link that can be clicked on by the victim to perform arbitrary actions. This issue has been patched in version 4.5.4.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2025/CVE-2025-46349.yaml"}
+,
+{"ID":"CVE-2025-46549","Info":{"Name":"YesWiki \u003c= 4.5.1 - Cross-Site Scripting","Severity":"medium","Description":"YesWiki \u003c= 4.5.1 contains a reflected cross-site scripting caused by insufficient sanitization in user input, letting attackers steal cookies and hijack sessions, exploit requires user to click malicious link.\n","Classification":{"CVSSScore":"N/A"}},"file_path":"http/cves/2025/CVE-2025-46549.yaml"}
 ,
 {"ID":"CVE-2025-46550","Info":{"Name":"YesWiki \u003c 4.5.4 - Cross-Site Scripting","Severity":"medium","Description":"YesWiki \u003c 4.5.4 contains a reflected cross-site scripting caused by unsanitized `idformulaire` parameter in `/?BazaR` endpoint, letting attackers steal cookies and hijack sessions, exploit requires user to click malicious link.\n","Classification":{"CVSSScore":"5.3"}},"file_path":"http/cves/2025/CVE-2025-46550.yaml"}
 ,
