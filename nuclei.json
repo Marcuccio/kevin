@@ -1541,6 +1541,8 @@
 ,
 {"ID":"CVE-2019-13462","Info":{"Name":"Lansweeper Unauthenticated SQL Injection","Severity":"critical","Description":"Lansweeper before 7.1.117.4 allows unauthenticated SQL injection.","Classification":{"CVSSScore":"9.1"}},"file_path":"http/cves/2019/CVE-2019-13462.yaml"}
 ,
+{"ID":"CVE-2019-13608","Info":{"Name":"Citrix StoreFront Server - XML External Entity","Severity":"high","Description":"Citrix StoreFront Server before 1903, 7.15 LTSR before CU4 (3.12.4000), and 7.6 LTSR before CU8 (3.0.8000) allows XXE attacks.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2019/CVE-2019-13608.yaml"}
+,
 {"ID":"CVE-2019-14205","Info":{"Name":"WordPress Nevma Adaptive Images \u003c0.6.67 - Local File Inclusion","Severity":"high","Description":"WordPress Nevma Adaptive Images plugin before 0.6.67 allows remote attackers to retrieve arbitrary files via the $REQUEST['adaptive-images-settings']['source_file'] parameter in adaptive-images-script.php.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2019/CVE-2019-14205.yaml"}
 ,
 {"ID":"CVE-2019-14206","Info":{"Name":"Nevma Adaptive Images - Arbitrary File Deletion","Severity":"high","Description":"Nevma Adaptive Images plugin before 0.6.67 for WordPress contains an arbitrary file deletion caused by unsanitized input in adaptive-images-script.php, letting remote attackers delete arbitrary files, exploit requires sending specific request parameters.\n","Classification":{"CVSSScore":"7.5"}},"file_path":"http/cves/2019/CVE-2019-14206.yaml"}
