@@ -4123,6 +4123,8 @@
 ,
 {"ID":"CVE-2022-27924","Info":{"Name":"Zimbra Collaboration Suite - Memcached Command Injection","Severity":"high","Description":"Zimbra Collaboration Suite versions 8.8.15 and 9.0 contain a memcached command injection vulnerability that allows an unauthenticated attacker to inject arbitrary memcache commands into a targeted instance, leading to cache poisoning and potential credential theft.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2022/CVE-2022-27924.yaml"}
 ,
+{"ID":"CVE-2022-27925","Info":{"Name":"Zimbra Collaboration Suite 8.8.15/9.0 - Zip Path Traversal","Severity":"high","Description":"Zimbra Collaboration (aka ZCS) 8.8.15 and 9.0 has mboximport functionality that receives a ZIP archive and extracts files from it. An authenticated user with administrator rights has the ability to upload arbitrary files to the system, leading to directory traversal.\n","Classification":{"CVSSScore":"7.2"}},"file_path":"http/cves/2022/CVE-2022-27925.yaml"}
+,
 {"ID":"CVE-2022-27926","Info":{"Name":"Zimbra Collaboration (ZCS) - Cross Site Scripting","Severity":"medium","Description":"A reflected cross-site scripting (XSS) vulnerability in the /public/launchNewWindow.jsp component of Zimbra Collaboration (aka ZCS) 9.0 allows unauthenticated attackers to execute arbitrary web script or HTML via request parameters.\n","Classification":{"CVSSScore":"6.1"}},"file_path":"http/cves/2022/CVE-2022-27926.yaml"}
 ,
 {"ID":"CVE-2022-27927","Info":{"Name":"Microfinance Management System 1.0 - SQL Injection","Severity":"critical","Description":"Microfinance Management System 1.0 is susceptible to SQL Injection.\n","Classification":{"CVSSScore":"9.8"}},"file_path":"http/cves/2022/CVE-2022-27927.yaml"}
